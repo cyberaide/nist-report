@@ -1351,7 +1351,7 @@ Class
 
 Implementation repository (link to GitHub)
 
-\subsection{Description}
+\subsubsection{Description}
 
 Fingerprint recognition refers to the automated method for verifying a match between two fingerprints and that is used to identify individuals and verify their identity. Fingerprints (Figure 1) are the most widely used form of biometric used to identify individuals.
  Example fingerprints 
@@ -1375,7 +1375,7 @@ match.
 
 The implemented solution uses stack of HDFS, YARN, Apache Spark, Apache HBase, and Apache drill. A Hadoop cluster is deployed and YARN used to schedule Spark jobs that load the images into HBase, process the images, and compute the matches. Apache Drill, with the HBase plugin, can then be used to generate reports.
 
-\subsection{Software Stack}
+\subsubsection{Software Stack}
 
 Big Data software packages:
 
@@ -1403,19 +1403,19 @@ Other tools and technologies:
 \item Scala
 \end{itemize}
 
-\subsection{Deployment Approach}
+\subsubsection{Deployment Approach}
 
 The resource allocation can be done using Cloudmesh Client.
 Next, Cloudmesh Big Data Stack is used to deploy the Big Data software packages.
 Finally, some Ansible playbooks deploy and compile a scala program that integrates the Big Data infrustructure with running the domain specific code.
 
-\subsection{Development Status}
+\subsubsection{Development Status}
 
 Complete
 
 
 
-\subsection{Lessons Learned}
+\subsubsection{Lessons Learned}
 
 \subsection{Face Detection}
 
