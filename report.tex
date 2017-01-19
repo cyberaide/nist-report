@@ -84,8 +84,21 @@
 \doi{\url{https://github.com/cyberaide/nist-report}}
 
 
-\begin{abstract}
-FIXME
+\begin{abstract} {\small\it This document summarizes the NIST Big Data
+    Public Working Group (BDPWG) use-cases document: "Possible Big
+    Data Use Cases Implementation using NBDRA". Additional projects
+    originated from classes taught at Indiana University. The focus of
+    our current work is the development of abstractions capturing the
+    basic concepts we have seen and the development of a REST API
+    implementing some of these ideas. We describe a few of the
+    underlying components for allocating and managing virtual
+    clusters. Additionally, a summary of the ecosystem (Open Source
+    via GitHub) and Academic (via Indiana University classes) in which
+    Big Data Software is used. There is a brief description of a few
+    of the Use Cases, as well as a description of the major
+    components. Finally we describe the software stacks developed as
+    part of this work and then conclude with some lessons learned and
+    ideas for future work.  }
 \end{abstract}
 
 \setboolean{displaycopyright}{true}
@@ -1477,11 +1490,11 @@ playbook runs Ansible roles in order which looks like:
 
 
 \begin{verbatim}
-* include: sched/00-mesos.yml
-* include: proc/01-spark.yml
-* include: apps/02-opencv.yml
-* include: data/03-inria-dataset.yml
-* include: anlys/04-human-face-detection.yml
+include: sched/00-mesos.yml
+include: proc/01-spark.yml
+include: apps/02-opencv.yml
+include: data/03-inria-dataset.yml
+include: anlys/04-human-face-detection.yml
 \end{verbatim}
 	
 
@@ -1749,32 +1762,45 @@ software deployment is accommodated with Cloudmesh, Ansible, Chef,
 Puppet, Salt, OpenStack Heat, Microsoft Azure Template, and Amazon
 Cloudformation.
 
-\begin{verbatim}
-* Framework
-   * Hadoop
-   * Mesos
-* Processing
-   * Spark
-   * Storm
-* Language
-   * Pig
-   * R
-* Database
-   * HBase
-   * Hive
-   * MongoDB
-   * MySQL
-* Library
-   * Mahout
-   * nltk
-   * MLlib
-   * Lucene/Solr
-   * OpenCV
-* Tools
-   * Ganglia
-   * Nagios
-   * Zookeeper
-\end{verbatim}
+\begin{itemize}
+\item Framework
+\begin{itemize}
+   \item Hadoop
+   \item Mesos
+\end{itemize}
+\item Processing
+\begin{itemize}
+   \item Spark
+   \item Storm
+\end{itemize}
+\item Language
+\begin{itemize}
+   \item Pig
+   \item R
+\end{itemize}
+\item Database
+\begin{itemize}
+   \item HBase
+   \item Hive
+   \item MongoDB
+   \item MySQL
+\end{itemize}
+\item Library
+\begin{itemize}
+   \item Mahout
+   \item nltk
+   \item MLlib
+   \item Lucene/Solr
+   \item OpenCV
+\end{itemize}
+\item Tools
+\begin{itemize}
+   \item Ganglia
+   \item Nagios
+   \item Zookeeper
+\end{itemize}
+\end{itemize}
+
 
 In detail, table is provided:
 
