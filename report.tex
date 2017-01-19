@@ -4,6 +4,58 @@
 
 \usepackage{titlesec}
 
+\usepackage{ifxetex}
+\ifxetex
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{STIXGeneral}
+\else
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\fi
+\usepackage{textcomp}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{ulem}
+\usepackage{amssymb}
+%\usepackage{fancyhdr}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+\usepackage{color}
+\usepackage{xcolor,colortbl}
+\newcommand{\grey}{\cellcolor{lightgray}}  %{0.9}
+\newcommand{\blue}{\cellcolor{gray}}  %{0.9}
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{enumitem}
+\setlist{nosep}
+
+\usepackage{csvsimple}
+%\usepackage{longtable}
+%usepackage{lscape}
+%\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{basicstyle=\ttfamily,
+%\lstset{basicstyle=helvetica,
+  mathescape=true,
+  escapeinside=||,
+  autogobble}
+
+\newcommand*\rot{\rotatebox{90}}
+\newcommand*\OK{\ding{51}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{4cm}}
+\usepackage{xcolor}
+\usepackage[colorinlistoftodos,prependcaption,textsize=normalsize]{todonotes}
+
+
+
+
 \setcounter{secnumdepth}{4}
 
 \titleformat{\paragraph}
@@ -67,50 +119,91 @@ then conclude with some lessons learned and ideas for future work.
 
 \section{Summary of Changes from Last Update}
 
-Previous update described XYZ.
-Since then, we have begun development of an API with a REST frontend for bringing up and deploying several of the technologies used by the Use Cases
+Previous update described FIXME.  Since then, we have begun
+development of an API with a REST frontend for bringing up and
+deploying several of the technologies used by the Use Cases
 
 
 
 \subsection{Plugins}
 
-Previously we were developing a single Ansible repository with the software modules such as Spark, HBase, Drill, etc. We have come to understand that an improved approach is to support a plugin-based architecture for deployment components. These components can therefore more easily be integrated from various sources.
+Previously we were developing a single Ansible repository with the
+software modules such as Spark, HBase, Drill, etc. We have come to
+understand that an improved approach is to support a plugin-based
+architecture for deployment components. These components can therefore
+more easily be integrated from various sources.
 
 
 \subsection{Deployers}
 
-We had previouly settled on the use of Ansible for deploying software components. While Ansible continues to be the primary tool, we are designing in support for other systems as well. This would allow users more familiar with Chef or NixOps for example to take advantage of the domain they know better.
+We had previouly settled on the use of Ansible for deploying software
+components. While Ansible continues to be the primary tool, we are
+designing in support for other systems as well. This would allow users
+more familiar with Chef or NixOps for example to take advantage of the
+domain they know better.
 
 
 
 \subsection{Stack Compositions}
 
-Compositions will allow different deployers to build on top of each other.
+Compositions will allow different deployers to build on top of each
+other.
 
 
 
 
 \section{Focus of Current Work}
 
-We are currently working on developing a an API for managing the infrastructure and deploying software stacks to the cluster. This API will be exposed as a REST service. A preliminary set of components that has been developed as part of the API has been used by students in classes in the Fall of 2016 and expect even more to use these components in the Spring 2017 class [ref].
+We are currently working on developing a an API for managing the
+infrastructure and deploying software stacks to the cluster. This API
+will be exposed as a REST service. A preliminary set of components
+that has been developed as part of the API has been used by students
+in classes in the Fall of 2016 and expect even more to use these
+components in the Spring 2017 class FIXME].
+
+
 \section{Architecture}
 
-To address the complexity of the development of the different roles and scripts users must not only deliver them and present them to the data scientists, but must be prepared based on DevOps founded principals that deploys and test the scripts in a continuous or on an on demand fashion (in case significant resources are used to test the application). Hence in addition to the development of the scripts to deploy the software, we must also develop scripts that automatically execute the application on existing data sets to verify the functionality upon changes in the application, data, operating system, or infrastructure services such as hypervisors and containers.
+To address the complexity of the development of the different roles
+and scripts users must not only deliver them and present them to the
+data scientists, but must be prepared based on DevOps founded
+principals that deploys and test the scripts in a continuous or on an
+on demand fashion (in case significant resources are used to test the
+application). Hence in addition to the development of the scripts to
+deploy the software, we must also develop scripts that automatically
+execute the application on existing data sets to verify the
+functionality upon changes in the application, data, operating system,
+or infrastructure services such as hypervisors and containers.
 
 
+\begin{figure}[htb]
+  \centering
+      \includegraphics[width=1.0\columnwidth]{images/nist-devops-1.pdf}
+  \caption{Continuous improvement while using cloudmesh interactively.}
+  \label{F:NIST-devops-1}
+\end{figure}
 
 
- nist-devops-1.png 
+Figure \ref{F:NIST-devops-1} depicts a high level overview of the cyclic workflow
+associated with a single application for a specific dataset. Starting
+with a Cloudmesh Script that allocates resources and then deploys the
+necessary software and desired dataset. The analytics component
+executed is then executed. Upon verification of the results and
+modification of compnenets as needed the process repeats. This
+continues iteratively until the desired results are achieved. Tests at
+the end that verify certain results will be used to verify if the
+resulting run was successful. If not they are flagged and a
+notification is send to the maintaining team. New big data tests can
+be integrated into the set of benchmarks tested and the they can be
+evaluated based continuously or upon change.
 
 
-
-Figure 1: Continuous integration workflow for big data test applications [ref]
-
-
-Figure 1 depicts a high level overview of the cyclic workflow associated with a single application for a specific dataset. Starting with a Cloudmesh Script that allocates resources and then deploys the necessary software and desired dataset. The analytics component executed is then executed. Upon verification of the results and modification of compnenets as needed the process repeats. This continues iteratively until the desired results are achieved. Tests at the end that verify certain results will be used to verify if the resulting run was successful. If not they are flagged and a notification is send to the maintaining team. New big data tests can be integrated into the set of benchmarks tested and the they can be evaluated based continuously or upon change. 
-
-
-This behaviour is augmented in Figure 2 with the integration of the data repositories that are used to manage and maintain the scripts, the playbooks and the data. While the scripts are simple cloudmesh scripts to drive a particular application, we envision that most roles are published as ansible roles to be integrated in application specific playbooks. Playbooks exists for the  phases of the execution
+This behaviour is augmented in Figure~\ref{F:NIST-devops-2} with the integration of the
+data repositories that are used to manage and maintain the scripts,
+the playbooks and the data. While the scripts are simple cloudmesh
+scripts to drive a particular application, we envision that most roles
+are published as ansible roles to be integrated in application
+specific playbooks. Playbooks exists for the phases of the execution
 
 \begin{description}
 \item[Phase 0:] start of the integrated application verification
@@ -120,34 +213,64 @@ This behaviour is augmented in Figure 2 with the integration of the data reposit
 \item[Phase 4:] verification of the result
 \end{description}
 
- nist-devops-2.png 
+
+\begin{figure}
+  \centering
+      \includegraphics[width=0.8\columnwidth]{images/nist-devops-2.pdf}
+  \caption{Interaction of the continuous improvement steps with
+    various databases while using ansible deployment scripts.}
+  \label{F:NIST-devops-2}
+\end{figure}
 
 
-
-Figure 2: Workflow of continuous integration of data, application and verification
 
 
 \section{Provisioning Machines}
 
 
 
-The first step in a data processing pipelines is the provisioning/allocation of compute resources. These can be physical machines or, increasingly common and accessible, virtual machines. There are several major technologies that support this infrustructure as a service paradigm. Some notable ones include Amazon EC2, Microsoft Azure, Google Compute Engine, and Chameleon Cloud.
+The first step in a data processing pipelines is the
+provisioning/allocation of compute resources. These can be physical
+machines or, increasingly common and accessible, virtual
+machines. There are several major technologies that support this
+infrustructure as a service paradigm. Some notable ones include Amazon
+EC2, Microsoft Azure, Google Compute Engine, and Chameleon Cloud.
 
 
-Part of our work has been in developing the cloudmesh client, which is a lightweight client interface of accessing heterogeneous clouds, clusters, and work- stations right from the users computer. The user can man- age her own set of resources she would like to utilize. Thus the user has the freedom to customize their cyber infras- tructure they use. Cloudmesh client includes an API, a command-line client, and a command-line shell. It strives to abstract backends to databases that are used to manage the workflow utilizing the different infrastructure and also the services. Switching for example to stage virtual machines from OpenStack clouds to amazon is as simple as specify- ing the name of the cloud. Moreover, cloudmesh client can be installed on Linux, MacOSX, and in future Windows.  Currently cloudmesh supports backends to SLURM, SSH, OpenStack, AWS, and Azure. Using cloudmesh, users can migrate accross infrustructure service providers relatively seemlessly.
+Part of our work has been in developing the cloudmesh client, which is
+a lightweight client interface of accessing heterogeneous clouds,
+clusters, and work- stations right from the users computer. The user
+can man- age her own set of resources she would like to utilize. Thus
+the user has the freedom to customize their cyber infras- tructure
+they use. Cloudmesh client includes an API, a command-line client, and
+a command-line shell. It strives to abstract backends to databases
+that are used to manage the workflow utilizing the different
+infrastructure and also the services. Switching for example to stage
+virtual machines from OpenStack clouds to amazon is as simple as
+specify- ing the name of the cloud. Moreover, cloudmesh client can be
+installed on Linux, MacOSX, and in future Windows.  Currently
+cloudmesh supports backends to SLURM, SSH, OpenStack, AWS, and
+Azure. Using cloudmesh, users can migrate accross infrustructure
+service providers relatively seemlessly.
 
 
- cloudmesh-arch-1.png 
+\begin{figure}[htb]
+  \centering
+     \includegraphics[width=1.0\columnwidth]{images/cloudmesh-arch-1.pdf}
+  \caption{Cloudmesh layered architecture.} 
+  \label{F:cloudmesh-arch}
+\end{figure}
 
-Figure 3: Architecture of Cloudmesh Client
 
-
-Figure 3 describes the architecture of Cloudmesh Client.
+Figure~\ref{F:cloudmesh-arch} describes the architecture of Cloudmesh Client.
 
 %\section{Deployment and Configuration of Software}
 \section{Deployment and Configuration}
 
-The second step of the pipelines consists of deploying the desired software onto newly allocated resources. At this point, nodes may be available, but are in their initial state, which needs to be updated by installing and configuring software.
+The second step of the pipelines consists of deploying the desired
+software onto newly allocated resources. At this point, nodes may be
+available, but are in their initial state, which needs to be updated
+by installing and configuring software.
 
 
 DevOps tools aim to support this component. One significant benefit is
@@ -157,9 +280,21 @@ files that can be checked into a version control system and tested.
 
 \subsection{DevOps Tools}
 
-The following table provides a short overview of several notable DevOps tools. These tools allows the state of a cluster to be defined at various levels. Some (such as Ansible, SaltStack) primarily operate at the level of software deployment and configuration of a preexisting cluster, while others (i.e. Juju, NixOps) additionally provide support for allocating the compute resources. Another factor is the interaction with the cluster via pushing the desired state to the nodes, or having the nodes run an agent that pulls the state definition and then evaluates it locally. Finally, the desired state is either declaratively defined, where the tools determines the steps required to achieve the state, or imperatively, where the user/developer is responsible.
+The following table provides a short overview of several notable
+DevOps tools. These tools allows the state of a cluster to be defined
+at various levels. Some (such as Ansible, SaltStack) primarily operate
+at the level of software deployment and configuration of a preexisting
+cluster, while others (i.e. Juju, NixOps) additionally provide support
+for allocating the compute resources. Another factor is the
+interaction with the cluster via pushing the desired state to the
+nodes, or having the nodes run an agent that pulls the state
+definition and then evaluates it locally. Finally, the desired state
+is either declaratively defined, where the tools determines the steps
+required to achieve the state, or imperatively, where the
+user/developer is responsible.
 
 
+FIXME
 Tool
 	Developer
 	License
@@ -221,127 +356,254 @@ Tool
 Several of these tools may be used to showcase different capabilities:
 
 
-\subsubsection{Ansible}
+\begin{description}
 
-YAML-based declarative descriptions of the desired state of the system. The description is used to generate a Python program that is pushed over SSH to each node, where it is then run to modify the system.
+\item[Ansible] YAML-based declarative descriptions of the desired
+  state of the system. The description is used to generate a Python
+  program that is pushed over SSH to each node, where it is then run
+  to modify the system.
+
+\item[Chef] A Ruby Domain Specific Language for defining sets of
+  actions (or {/em recipes}). These recipes are pulled onto the
+  managed nodes from a configuration server.
+
+\item[Juju] Focuses on connecting services together, using arbitrary
+  tools to bring a system to the desired state.
+
+\item[NixOps+NixOS] Resource allocator (EC2, GCE, Azure) for NixOS
+  nodes. Once started, the nodes are brought to the desired state by
+  interpreting a configuration file which declaratively defines the
+  desired state of the node.
+
+\end{description}
 
 
-\subsubsection{Chef}
-
-A Ruby Domain Specific Language for defining sets of actions (or {/em recipes}). These recipes are pulled onto the managed nodes from a configuration server.
-
-
-\subsubsection{Juju}
-
-Focuses on connecting services together, using arbitrary tools to bring a system to the desired state.
-
-
-\subsubsection{NixOps+NixOS}
-
-Resource allocator (EC2, GCE, Azure) for NixOS nodes. Once started, the nodes are brought to the desired state by interpreting a configuration file which declaratively defines the desired state of the node.
 \subsection{Concepts}
 
-One of our design principles is to allow the user to use whichever technologies they are most familiar with. Therefore we do not wish to constrain them into using a specific DevOps technology such as Ansible or Chef. Additionally, there are many deployment definitions for various technologies publically available for these deployment software, as well as private definitions housed by whichever company developed them. 
+One of our design principles is to allow the user to use whichever
+technologies they are most familiar with. Therefore we do not wish to
+constrain them into using a specific DevOps technology such as Ansible
+or Chef. Additionally, there are many deployment definitions for
+various technologies publically available for these deployment
+software, as well as private definitions housed by whichever company
+developed them.
 
 
-\subsubsection{Cluster}
+\begin{description}
 
-A cluster is a collection of virtual machines that can be references as a group. Methods acting on the virtual cluster are restricted to adding and removing instances. This layer is responsible for allocating and deallocating resources (i.e. starting and stopping the instances).
-
-
-\subsubsection{Stack}
-
-A stack defines how a particular technology is to be deployed. This uses deployer plugins to support using Ansible Roles, Chef Recipes, NixOS configurations, etc. The core concept is that a Stack represents a single technology, such as Hadoop, or Spark, or HBase. One of the desired properties of Stack evaluation is idempotence. Evaluating a given Stack on a node multiple times should have the exact same effect on the state of the system as evaluating it once.
-
-
-\subsubsection{omposition}
-
-A Composition is a group of Stacks that as a whole represent the deployment of a group of technologies. For instance Figure FIXME shows that in order to provide Fingerprint Matching as a service, one would need a Web stack, a Fingerprint stack, and the Hadoop stack.
- cloudmesh-stack-composition.jpg 
-
-Figure FIXME. Fingprint Stack composed with Hadoop and Web stacks to
-provide Fingerprinting-as-a-Service. Note that Stacks can also be Compositions
+\item[Cluster] A cluster is a collection of virtual machines that can
+  be references as a group. Methods acting on the virtual cluster are
+  restricted to adding and removing instances. This layer is
+  responsible for allocating and deallocating resources (i.e. starting
+  and stopping the instances).
 
 
-One crucial concept is that Stacks and Compositions are mutually recursive: a Composition is composed of at least one Stack, and each stack itself be a composition.
+\item[Stack] A stack defines how a particular technology is to be
+  deployed. This uses deployer plugins to support using Ansible Roles,
+  Chef Recipes, NixOS configurations, etc. The core concept is that a
+  Stack represents a single technology, such as Hadoop, or Spark, or
+  HBase. One of the desired properties of Stack evaluation is
+  idempotence. Evaluating a given Stack on a node multiple times
+  should have the exact same effect on the state of the system as
+  evaluating it once.
 
 
-\subsubsection{Link}
+\item[Composition] A Composition is a group of Stacks that as a whole
+  represent the deployment of a group of technologies. For instance
+  Figure FIXME shows that in order to provide Fingerprint Matching as
+  a service, one would need a Web stack, a Fingerprint stack, and the
+  Hadoop stack.
 
-A Link allowes services to introspect properties of the virtual cluster and other Stacks at the time of deployment. For example, during the deployment of Apache Hadoop, the Hadoop Stack needs to determine the address of the nodes running the Zookeeper service, as well as the port on which Zookeeper is exposed. Currently this information is maintained by hand, which causes deployments to be very sensistive to how dependent compositions are configured. The goal for Linking is to propagate this information throughout the Stack Composition dependency graph as needed.
+  \begin{figure}
+    \centering
+    \includegraphics[width=1\columnwidth]{images/cloudmesh-stack-composition.pdf}
+    \caption{Multiple stacks may be composed. Here, the
+      {\it Fingerprint} stack is a composition of the Apache
+      {\it Drill}, {\it HBase}, and {\it Spark}
+      stacks. The {\it Fingerprint} stack is then included as a layer withing
+      another composition built upon {\it Hadoop} and extended with the
+      {\it Web} layers. The {\it Web} layer itself may be composed
+      of other layers.
+      \label{F:stack-composition}}
+  \end{figure}
+
+  Figure~\ref{F:stack-composition}. Fingprint Stack composed with Hadoop and Web stacks to
+  provide Fingerprinting-as-a-Service. Note that Stacks can also be
+  Compositions
 
 
-\subsubsection{Deployment/Evaluation}
+  One crucial concept is that Stacks and Compositions are mutually
+  recursive: a Composition is composed of at least one Stack, and each
+  stack itself be a composition.
 
-A Deployment defines DevOps application-specific interface to evaluate Compositions.
-Figure FIXME shows how the sample Fingerprint service stack shown in Figure FIXME may be evaluated. First the Daemon Watcher stack is deployed, as it is required by Hadoop. Although Java Stack is required for Hadoop, Spark, HBase, and Drill, it should only be evaluated once per node. The Fingerpring and Web stack may potentially be evaluated in parallel. The semantics of the parallel evaluation is not well understood at the moment though.
+
+\item[Link] A Link allowes services to introspect properties of the
+  virtual cluster and other Stacks at the time of deployment. For
+  example, during the deployment of Apache Hadoop, the Hadoop Stack
+  needs to determine the address of the nodes running the Zookeeper
+  service, as well as the port on which Zookeeper is
+  exposed. Currently this information is maintained by hand, which
+  causes deployments to be very sensistive to how dependent
+  compositions are configured. The goal for Linking is to propagate
+  this information throughout the Stack Composition dependency graph
+  as needed.
 
 
- cloudmesh-stack-graph.png 
+\item[Deployment/Evaluation] A Deployment defines DevOps
+  application-specific interface to evaluate Compositions.  Figure
+  FIXME shows how the sample Fingerprint service stack shown in Figure
+  FIXME may be evaluated. First the Daemon Watcher stack is deployed,
+  as it is required by Hadoop. Although Java Stack is required for
+  Hadoop, Spark, HBase, and Drill, it should only be evaluated once
+  per node. The Fingerpring and Web stack may potentially be evaluated
+  in parallel. The semantics of the parallel evaluation is not well
+  understood at the moment though.
 
-Figure FIXME. Evaluation of a Stack shown as a dependency graph.
+
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=1\columnwidth]{images/cloudmesh-stack-graph.pdf}
+    \caption{Evaluation of a stack.
+      The {\it My Analytics Stack} is composed of the {\it Fingerprint} and {\it Web} layers.
+      These in turn are themselves compositions.
+      Numbers indicate order of evaluation.
+      While {\it spark}, {\it hbase}, and {\it drill} depend on {\it java}, 
+      re-evaluation (\textit{4} - \textit{6}) is not problematic due to the idempotency property.
+      \label{F:stack-graph}}
+  \end{figure}
+
+
+  Figure~\ref{F:stack-graph}. Evaluation of a Stack shown as a dependency graph.
+
+
+\end{description}
 
 
 \subsection{Design Principles}
 
-\subsubsection{Client based}
+\begin{description}
 
-As a client, the cloudmesh program requires no special privileges to run. This adheres to the principle of least priviledge in an attempt to minimize security issues. The program runs locally end exits completely once the user terminates it.
-
-
-\subsubsection{Command Shell and Command Line Interface}
-
-The enables scripting with cloudmesh as a way of automating virtual cluster deployment and tear down.
+\item[Client based.] As a client, the cloudmesh program requires no
+  special privileges to run. This adheres to the principle of least
+  priviledge in an attempt to minimize security issues. The program
+  runs locally end exits completely once the user terminates it.
 
 
-\subsubsection{Plugin Architecture}
-
-The purpose of the plugins is to allow users to use the deployment tools they are most familiar with, without constraining them to a specific technology. Additionally, a desired outcome of this design is increased code sharing and reuse.
-
-
-\subsubsection{REST API}
-
-The goal here is that the client may be used to support service-based deployments, in scenarios that warrent it.
+\item[Command Shell and Command Line Interface.] The enables scripting
+  with cloudmesh as a way of automating virtual cluster deployment and
+  tear down.
 
 
-\subsubsection{Layered Architecture}
-
-The layered architecture, as shown in Figure FIXME, is intended to facilitate development and integration of different components that are not currently supported. For example, adding Docker support exposes a Docker layer that may be used to launch containers in a similar fashion to OpenStack virtual machines.
-
-
-\subsubsection{Management Framework}
-
-The supports management of allocated resources, allowing starting, stopping, restarting, reinitializing, etc.
+\item[Plugin Architecture.] The purpose of the plugins is to allow
+  users to use the deployment tools they are most familiar with,
+  without constraining them to a specific technology. Additionally, a
+  desired outcome of this design is increased code sharing and reuse.
 
 
-\subsubsection{Database Agnostic}
+\item[REST API.] The goal here is that the client may be used to
+  support service-based deployments, in scenarios that warrent it.
 
-The state of various components is stored in a database. Currently this is an SQLite database, but access to the database all passes through a dedicated module. The hope is that, if needed, the database backend may be parameterized to support others such as MariaDB, PostgreSQL, MongoDB, etc.
+
+\item[Layered Architecture.] The layered architecture, as shown in
+  Figure~\ref{F:cloudmesh-arch}, is intended to facilitate development
+  and integration of different components that are not currently
+  supported. For example, adding Docker support exposes a Docker layer
+  that may be used to launch containers in a similar fashion to
+  OpenStack virtual machines.
 
 
+\item[Management Framework.] The supports management of allocated
+  resources, allowing starting, stopping, restarting, reinitializing,
+  etc.
+
+
+\item[Database Agnostic.] The state of various components is stored in
+  a database. Currently this is an SQLite database, but access to the
+  database all passes through a dedicated module. The hope is that, if
+  needed, the database backend may be parameterized to support others
+  such as MariaDB, PostgreSQL, MongoDB, etc.
+
+\end{description}
 
 
 \subsection{REST API Development}
 
-As described elsewhere, one of our goals is to provide a Representational State Transfer (REST) API for cloudmesh. This would enable web services to more easily use Cloudmesh to provide users with the ability to use and manage virtual clusters.  REST is a well understood and widely used approach for designing and developing service-based APIs. Additionally the semantics of HTTP methods in a REST context are defined.
+As described elsewhere, one of our goals is to provide a
+Representational State Transfer (REST) API for cloudmesh. This would
+enable web services to more easily use Cloudmesh to provide users with
+the ability to use and manage virtual clusters.  REST is a well
+understood and widely used approach for designing and developing
+service-based APIs. Additionally the semantics of HTTP methods in a
+REST context are defined.
 
 
-Figure FIXME shows an initial draft of the Cloudmesh REST API. These show resources and how the HTTP methods may be used to manage virtual clusters, stack compositions and deployments, and HPC experiments.
+Table~\ref{T:rest} shows an initial draft of the Cloudmesh REST
+API. These show resources and how the HTTP methods may be used to
+manage virtual clusters, stack compositions and deployments, and HPC
+experiments.
 
 
- test.png 
+\begin{table*}[htb]
+  \caption{Selected Service Description. Items prefixed with a colon (:) indicate parameters e.g. :id, :?.}
+  \label{T:rest}
+  \bigskip
+  \begin{center}
+    \begin{small}
+      \begin{tabular}{|l|l|l|}
+        \hline
+        \blue \textbf{Resource} & \blue \textbf{REST Method} & \blue \textbf{Description}\tabularnewline
 
-Figure FIXME Initial set of work-in-progress REST API resources.
-Items with a colon (:) prefix are parameters passed to the called method.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Virtual cluster
+\hline \multicolumn{3}{|l|}{\grey\bf Virtual Cluster: /cluster} \tabularnewline \hline
+/                         & GET      & List available clusters \tabularnewline \hline
+/                         & POST     & Launch a cluster on the provider \tabularnewline \hline
+/                         & DELETE   & Delete all available clusters \tabularnewline \hline
+/:id                      & DELETE   & Delete and destroy a cluster \tabularnewline \hline
+/:id                      & GET      & View the status of a cluster (nodes, node type, etc) \tabularnewline \hline
+/:id/properties/:property & GET, PUT & Get/set a property (provider, name, description) of the cluster \tabularnewline \hline
+/:id/inventory/:format    & GET      & Obtain an inventory of the cluster \tabularnewline \hline
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Composition
+\hline \multicolumn{3}{|l|}{\grey\bf Stack Composition: /stack} \tabularnewline \hline
+/                               & GET      & List available compositions \tabularnewline \hline
+/                               & POST     & Create a new composition \tabularnewline \hline
+/:id                            & GET      & Show information about the composition \tabularnewline \hline
+/:id                            & DELETE   & Delete a composition \tabularnewline \hline
+/:id/name                       & GET, PUT & Get/set the name of the composition \tabularnewline \hline
+/:id/add?deployer=:?\&source=:? & POST     & Add a layer to the composition \tabularnewline \hline
+/:id/layers                     & GET      & List layers of the composition \tabularnewline \hline
+/:id/layers/:id                 & DELETE   & Delete the layer of the composition \tabularnewline \hline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Stack Deployment
+\hline \multicolumn{3}{|l|}{\grey\bf Stack Deployment: /stack} \tabularnewline \hline
+/                         & GET  & List the available stacks with discription \tabularnewline \hline
+/:id/deployments/:cluster & POST & Deploy a stack onto a cluster \tabularnewline \hline
+/:id/status               & GET  & Current status \tabularnewline \hline
+/:id/deployments/:cluster & GET  & Current status on given cluster \tabularnewline \hline
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Batch
+\hline \multicolumn{3}{|l|}{\grey\bf Batch Experiments: /hpc} \tabularnewline \hline
+/                          & GET    & List all jobs started with the run command \tabularnewline \hline
+/:id                       & DELETE & Deletes the experiment with the given id \tabularnewline \hline
+/run?script=:?\&cluster=:? & POST   & Submits an experiment to the named cluster \tabularnewline \hline
+/:id/status                & GET    & Returns the status of the job started with the run command \tabularnewline \hline
+
+      \end{tabular}
+    \end{small}
+  \end{center}
+\end{table*}
 
 
 
 \section{Ecosystem Analysis}
 
-
-
-We believe that big data ecosystem consists of various software, applications and datasets on different platforms. To understand current activities on big data projects and provide recommended software components (roles) in big data, we conduct analysis on big data projects 1) from community (i.e. github), 2) and academia (i.e. indiana university) regarding to the following entities:
+We believe that big data ecosystem consists of various software,
+applications and datasets on different platforms. To understand
+current activities on big data projects and provide recommended
+software components (roles) in big data, we conduct analysis on big
+data projects 1) from community (i.e. github), 2) and academia
+(i.e. indiana university) regarding to the following entities:
 
 \begin{itemize}
 \item development language preference
@@ -349,7 +611,9 @@ We believe that big data ecosystem consists of various software, applications an
 \item sectors of public dataset source
 \end{itemize}
 
-This effort will result in building recommended software components (roles) which supports most of functionalities in a given big data applications.
+This effort will result in building recommended software components
+(roles) which supports most of functionalities in a given big data
+applications.
 
 \subsection{Analysis on Big Data Projects from Community}
 
@@ -368,15 +632,17 @@ detection to conduct a survey on a series of questions regarding to 1)
 A development language distribution, 2) dependency of libraries and
 packages, and 3) sectors of public dataset. Actual source code of
 public github repositories are evaluated with the survey query data
-available on \url{https://github.com/lee212/bd_stats_from_github}. There are
-six topics of NIST Collection used in this analysis where N1:
-Fingerprint Matching, N2: Face Detection, N3: Twitter Analysis, N4:
-Data Warehousing, N5: Geographic Information Systems, and N6:
-Healthcare Data. In addition, a list of recommended components (roles)
-is created based on the survey results.
+available on
+\url{https://github.com/lee212/bd_stats_from_github}. There are six
+topics of NIST Collection used in this analysis where N1: Fingerprint
+Matching, N2: Face Detection, N3: Twitter Analysis, N4: Data
+Warehousing, N5: Geographic Information Systems, and N6: Healthcare
+Data. In addition, a list of recommended components (roles) is created
+based on the survey results.
 
 \subsubsection{Language Preference}
 
+TODO
 Topic
 	C++
 	Python
@@ -477,7 +743,11 @@ Topic
 	Table ?:  Language Distribution of Topics related to those in the NIST collection on Github, Count is an average number of github repositories.
 
 
-The repository statistics indicate that C++, Python and Java are most common languages among the NIST collection (Table 1), although Matlab is dominant in the fingerprint. 
+        The repository statistics indicate that C++, Python and Java
+        are most common languages among the NIST collection (Table 1),
+        although Matlab is dominant in the fingerprint.
+
+
 \subsubsection{Package/Library/Tool Dependencies}
 
 We also notice that scientific python packages are commonly used to
@@ -738,7 +1008,14 @@ Topic
 
 \subsection{Analysis on Big Data Projects from Academia}
 
-At Indiana University, Big Data Analytics and Applications (BDAA) and Big Data Open Source Software Projects (BDOSSP) have been offered in 2015 and 2016 according. During these semesters, students have asked to complete a course project with big data software, tools and datasets. The statistics for languages, software, and dataset are provided in this section.
+At Indiana University, Big Data Analytics and Applications (BDAA) and
+Big Data Open Source Software Projects (BDOSSP) have been offered in
+2015 and 2016 according. During these semesters, students have asked
+to complete a course project with big data software, tools and
+datasets. The statistics for languages, software, and dataset are
+provided in this section.
+
+
 \subsubsection{Language Preference}
 
 Class
@@ -768,6 +1045,8 @@ Class
 	190
 	Table  FIXME:  Language Distribution for Big Data Classes from Indiana University
 (* Numbers in Table don’t sum up to total count - need to confirm)
+
+
 \subsubsection{Package/Library/Tool Dependencies}
 
 We had 37 final projects from Big Data Open Source Project Spring 2016
@@ -1039,6 +1318,8 @@ Package
 	python
 	4
 	Table FIXME: List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2016, count indicates a number of class projects that use a particular tool/library/package
+
+
 \subsubsection{Datasets}
 
 There were 49 class project in Big Data Analytics and applications Fall 2015, and use of 27 dataset are observed. Public dataset from industry was mainly used (44%) due to the interest on analytics from kaggle and twitter and availability e.g. amazon reviews and yelp reviews.
