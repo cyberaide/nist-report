@@ -1349,21 +1349,38 @@ Class
 
 \subsection{Fingerprint Matching}
 
-Implementation repository (link to GitHub)
+Implementation repository\\
+\url{https://github.com/cloudmesh/example-project-nist-fingerprint-matching}
 
 \subsubsection{Description}
 
-Fingerprint recognition refers to the automated method for verifying a match between two fingerprints and that is used to identify individuals and verify their identity. Fingerprints (Figure 1) are the most widely used form of biometric used to identify individuals.
- Example fingerprints 
-
-Figure 1 Example fingerprints
-
-
-The automated fingerprint matching generally required the detection of different fingerprint features (aggregate characteristics of ridges, and minutia points) and then the use of fingerprint matching algorithm, which can do both one-to- one and one-to- many matching operations. Based on the number of matches a proximity score (distance or similarity) can be calculated.
+Fingerprint recognition refers to the automated method for verifying a
+match between two fingerprints and that is used to identify
+individuals and verify their identity. Fingerprints
+(Figure~\ref{F:NIST-fingerprints}) are the most widely used form of
+biometric used to identify individuals.
 
 
-The goal for this project is: given a set of {/em probe} and {/em gallery}
-images, compare the probe images to the gallery images, and report the
+
+\begin{figure}[htb]
+  \centering
+      \includegraphics[width=0.9\columnwidth]{images/fingerprints}
+  \caption{Example Fingerprints.}
+  \label{F:NIST-fingerprints}
+\end{figure}
+
+
+
+The automated fingerprint matching generally required the detection of
+different fingerprint features (aggregate characteristics of ridges,
+and minutia points) and then the use of fingerprint matching
+algorithm, which can do both one-to- one and one-to- many matching
+operations. Based on the number of matches a proximity score (distance
+or similarity) can be calculated.
+
+
+The goal for this project is: given a set of probe and gallery images,
+compare the probe images to the gallery images, and report the
 matching scores.  The dataset used comprises 54,000 images along with
 their metadata. Provided tools include MINDTCT and BOZORTH3, which are
 part of the NIST Biometric Image Software (NBIS) release. These two
@@ -1372,8 +1389,11 @@ images to identify minutae which is used by BOZORTH3 to compute a
 match.
 
 
-
-The implemented solution uses stack of HDFS, YARN, Apache Spark, Apache HBase, and Apache drill. A Hadoop cluster is deployed and YARN used to schedule Spark jobs that load the images into HBase, process the images, and compute the matches. Apache Drill, with the HBase plugin, can then be used to generate reports.
+The implemented solution uses stack of HDFS, YARN, Apache Spark,
+Apache HBase, and Apache drill. A Hadoop cluster is deployed and YARN
+used to schedule Spark jobs that load the images into HBase, process
+the images, and compute the matches. Apache Drill, with the HBase
+plugin, can then be used to generate reports.
 
 \subsubsection{Software Stack}
 
