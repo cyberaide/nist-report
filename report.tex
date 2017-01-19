@@ -1592,6 +1592,46 @@ Planned
 
 \subsection{Analytics for Healthcare Data and Informatics}
 
+\subsubsection{Description}
+
+Several attempts have been made to apply Big Data framework and
+analytics in health care with various use cases. Medical image
+processing, signal analytics and genome wide analysis are addressed to
+provide efficient diagnostic tools and reduce healthcare costs (Belle
+et al., 2015) with big data software such as Hadoop, GPUs, and
+MongoDB. Open source big data ecosystem in healthcare is introduced
+(FIXME Raghupathi and Raghupathi, 2014) with examples and challenges
+to satisfy big data characteristics; volume, velocity, and variety
+(FIXME Zikopoulos, Eaton, and others, 2011). Cloud computing framework
+in healthcare for security is also discussed with concerns about
+privacy (FIXME Stantchev, Colomo-Palacios, and Niedermayer, 2014).
+
+
+\subsubsection{Software Stack}
+
+Big Data software stack:
+
+\begin{itemize}
+\item Apache Hadoop
+\item Apache Spark/mllib
+\item Apache Mahout
+\item Apache Lucene/Solr
+\item Theano deep learning library
+\end{itemize}
+
+\subsubsection{Deployment Approach}
+
+The resource allocation can be done using Cloudmesh Client.  Next,
+Cloudmesh Big Data Stack is used to deploy the Big Data software
+packages.  Finally, some Ansible playbooks deploy and compile
+additional packages that integrates the Big Data infrastructure with
+running the domain specific code.
+
+\subsubsection{Development Status}
+
+Planned
+
+
 \section{Spatial Big Data/Statistics/Geographic Information Systems}
 
 \section{Data Warehousing and Mining}
