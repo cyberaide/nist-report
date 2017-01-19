@@ -33,4 +33,7 @@ fast:
 watch:
 	latexmk -pvc -view=pdf ${FILE}
 
+todo:
+	egrep -nH --color=auto "FIXME|TODOj" *.tex
+
 .PHONY: all clean view fast watch
