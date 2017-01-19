@@ -1634,6 +1634,45 @@ Planned
 
 \section{Spatial Big Data/Statistics/Geographic Information Systems}
 
+\subsubsection{Description}
+
+The broad use of geographic information system (GIS) has been
+increased over commercial and scientific communities with the support
+of computing resources and data storages. For example, Hadoop-GIS
+(Ajiet al., 2013), a high performance spatial data warehousing system
+with Apache Hive and Hadoop, offers spatial query processing in
+parallel with MapReduce, and HadoopViz (FIXME Eldawy, Mokbel, and Jonathan,
+2016), a MapReduce framework for visualizing big spatial data,
+supports various visualization types of data from satellite data to
+countries borders.
+
+
+\subsubsection{Software Stack}
+
+\begin{itemize}
+\item Apache Hadoop
+\item Apache Spark/mllib
+\item GIS-tools
+\item Apache Mahout
+\item GDAL - Geospatial Data Abstraction Library
+\item S2 Geometry Library
+\item geopy geocoding python library
+\end{itemize}
+
+\subsubsection{Deployment Approach}
+
+The resource allocation can be done using Cloudmesh Client.  Next,
+Cloudmesh Big Data Stack is used to deploy the Big Data software
+packages.  Finally, some Ansible playbooks deploy and compile
+additional packages that integrates the Big Data infrastructure with
+running the domain specific code.
+
+\subsubsection{Development Status}
+
+Planned
+
+
+
 \section{Data Warehousing and Mining}
 
 Components (Roles)
