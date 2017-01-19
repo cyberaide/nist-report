@@ -1419,58 +1419,131 @@ Complete
 
 \subsection{Face Detection}
 
-Implementation repository (link to GitHub)
+Implementation repository:\\
+ \url{https://github.com/futuresystems/pedestrian-and-face-detection}
+
 \subsubsection{Description}
 
-Human detection and face detection have been studied during the last several years and models for them have improved along with Histograms of Oriented Gradients (HOG) for Human Detection [1]. OpenCV is a Computer Vision library including the SVM classifier and the HOG object detector for pedestrian detection and INRIA Person Dataset [2] is one of popular samples for both training and testing purposes. This example shows how to deploy the NIST Human and Face Detection with INRIA Person Dataset to the cluster where we deployed Apache Spark on Mesos to train and apply detection models from OpenCV using Python API. OpenCV Python code runs with Spark Map function to perform distributed job processing on the Mesos scheduler.
+Human detection and face detection have been studied during the last
+several years and models for them have improved along with Histograms
+of Oriented Gradients (HOG) for Human Detection [FIXME]. OpenCV is a
+Computer Vision library including the SVM classifier and the HOG
+object detector for pedestrian detection and INRIA Person Dataset [FIXME]
+is one of popular samples for both training and testing purposes. This
+example shows how to deploy the NIST Human and Face Detection with
+INRIA Person Dataset to the cluster where we deployed Apache Spark on
+Mesos to train and apply detection models from OpenCV using Python
+API. OpenCV Python code runs with Spark Map function to perform
+distributed job processing on the Mesos scheduler.
   
   
 
-Figure 1. Human Detection, original image (left), processed image (right)
+FIXME Figure 1. Human Detection, original image (left), processed image (right)
   
   
 
-Figure 2. Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box)
-When it comes to deploy applications and build clusters for batch-processing large datasets, Ansible scripts play a big role such as installation and configuration towards available machines. Ansible provides abstractions by Playbook Roles and reusability by Include statements. We define X application in X Ansible Role, for example, and use include statements to combine with other applications e.g. Y or Z. Five Ansible roles are used in this use case to build clusters for Human and Face Detection with INRIA dataset. The main Ansible playbook runs Ansible roles in order which looks like:
+FIXME Figure 2. Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box)
 
 
+When it comes to deploy applications and build clusters for
+batch-processing large datasets, Ansible scripts play a big role such
+as installation and configuration towards available machines. Ansible
+provides abstractions by Playbook Roles and reusability by Include
+statements. We define X application in X Ansible Role, for example,
+and use include statements to combine with other applications e.g. Y
+or Z. Five Ansible roles are used in this use case to build clusters
+for Human and Face Detection with INRIA dataset. The main Ansible
+playbook runs Ansible roles in order which looks like:
 
+
+\begin{verbatim}
 * include: sched/00-mesos.yml
 * include: proc/01-spark.yml
 * include: apps/02-opencv.yml
 * include: data/03-inria-dataset.yml
-
-* Include: anlys/04-human-face-detection.yml
+* include: anlys/04-human-face-detection.yml
+\end{verbatim}
 	
 
 Directory names e.g. sched, proc, data, or anlys indicate BDSS layers like:
-* sched: scheduler layer
-* proc: data processing layer
-* apps: application layer
-* data: dataset layer
-* anlys: analytics layer
+\begin{itemize}
+\item sched: scheduler layer
+\item proc: data processing layer
+\item apps: application layer
+\item data: dataset layer
+\item anlys: analytics layer
+\end{itemize}
+
 and two digits in the filename indicate an order of roles to be run. 
 
 
 It is assumed that virtual machines are created by
 virtual-cluster-libs, the command line tool to start VM instances. For
-example on OpenStack, 
+example on OpenStack,
 
 \begin{verbatim} 
 vcl boot -p openstack -P $USER
 \end{verbatim}
 
-command starts a set of virtual machine instances with a cluster definition file `.cluster.py`. The number of machines and groups for clusters e.g. namenodes and datanodes are specified in the file and Ansible inventory file, a list of target machines with groups, is generated once machines are ready to use. Ansible roles run to install applications on virtual clusters.
+command starts a set of virtual machine instances with a cluster
+definition file `.cluster.py`. The number of machines and groups for
+clusters e.g. namenodes and datanodes are specified in the file and
+Ansible inventory file, a list of target machines with groups, is
+generated once machines are ready to use. Ansible roles run to install
+applications on virtual clusters.
 
 
-Mesos role is installed first with Ansible inventory groups for masters and slaves in which mesos-master runs on the masters group and mesos-slave runs on the slaves group. Apache Zookeeper is included in the mesos role so that mesos slaves find an elected mesos leader from the zookeeper. Spark, as a data processing layer, provides two options for distributed job processing, batch job processing via a cluster mode and real-time processing via a client mode. The Mesos dispatcher runs on a masters group to accept a batch job submission and Spark interactive shell, which is the client mode, provides real-time processing on any node in the cluster. Either way, Spark is installed after a scheduler layer i.e. mesos to identify a master host for a job submission. Installation of OpenCV, INRIA Person Dataset and Human and Face Detection Python applications are followed.
+Mesos role is installed first with Ansible inventory groups for
+masters and slaves in which mesos-master runs on the masters group and
+mesos-slave runs on the slaves group. Apache Zookeeper is included in
+the mesos role so that mesos slaves find an elected mesos leader from
+the zookeeper. Spark, as a data processing layer, provides two options
+for distributed job processing, batch job processing via a cluster
+mode and real-time processing via a client mode. The Mesos dispatcher
+runs on a masters group to accept a batch job submission and Spark
+interactive shell, which is the client mode, provides real-time
+processing on any node in the cluster. Either way, Spark is installed
+after a scheduler layer i.e. mesos to identify a master host for a job
+submission. Installation of OpenCV, INRIA Person Dataset and Human and
+Face Detection Python applications are followed.
 
 
 \subsubsection{Software Stack}
 
+Big Data software packages
+
+\begin{itemize}
+\item Apache Spark
+\item Apache Mesos
+\item Apache Zookeeper
+\item OpenCV (with Python)
+\end{itemize}
+
+Datasets:
+
+\begin{itemize}
+\item INRIA Person Dataset
+\end{itemize}
+
 \subsubsection{Deployment Approach}
 
+Mesos role is installed with two Ansible inventory groups; masters and
+slaves where mesos-master runs on the masters group and mesos-slave
+runs on the slaves group. Apache Zookeeper is included in the mesos
+role and mesos slaves find an elected mesos leader from the
+zookeeper. Spark, as a data processing layer, provides two options for
+distributed job processing, batch job processing via a cluster mode
+and real-time processing via a client mode. The Mesos dispatcher runs
+on a masters group to accept a batch job submission and Spark
+interactive shell, which is the client mode, provides real-time
+processing on any node in the cluster. Either way, Spark is installed
+after a scheduler layer i.e. mesos to identify a master host for a job
+submission. Installation of OpenCV, INRIA Person Dataset and Human and
+Face Detection Python applications are followed.
+
 \subsubsection{Development Status}
+
+Complete
 
 \subsubsection{Lessons Learned}
 
