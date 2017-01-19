@@ -1632,7 +1632,7 @@ running the domain specific code.
 Planned
 
 
-\section{Spatial Big Data/Statistics/Geographic Information Systems}
+\subsection{Spatial Big Data/Statistics/Geographic Information Systems}
 
 \subsubsection{Description}
 
@@ -1673,7 +1673,51 @@ Planned
 
 
 
-\section{Data Warehousing and Mining}
+\subsection{Data Warehousing and Mining}
+
+\subsubsection{Description}
+
+Researches in data warehousing, data mining and OLAP have investigated
+current challenges and future directions over big data software and
+applications (FIXME Cuzzocrea, Bellatreche, and Song, 2013) due to the rapid
+increase of data size and complexity of data models. Apache Hive, a
+warehousing solution over a hadoop (FIXME Thusoo et al., 2009), has
+introduced to deal with large volume of data processing with the other
+research studies (FIXME Chen, 2010; He et al., 2011) and NoSQL platforms
+(Chevalier et al., 2015) have discussed with data warehouse ETL
+pipeline (FIXME Goodhope et al., 2012).
+
+
+\subsubsection{Software Stack}
+
+Big Data software stack:
+
+\begin{itemize}
+\item Apache Hadoop
+\item Apache Spark/mllib
+\item MongoDB
+\item Hive
+\item Pig
+\item Apache Mahout
+\item Apache Lucene/Solr
+\item MLlib
+\item Google BigQuery
+\end{itemize}
+
+\subsubsection{Deployment Approach}
+
+The resource allocation can be done using Cloudmesh Client.  Next,
+Cloudmesh Big Data Stack is used to deploy the Big Data software
+packages.  Finally, some Ansible playbooks deploy and compile
+additional packages that integrates the Big Data infrastructure with
+running the domain specific code.
+
+\subsubsection{Development Status}
+
+Planned
+
+
+
 
 Components (Roles)
 Based on the analysis from community and academia, we observed that there are crucial software, dataset and analytics in big data ecosystem. We, therefore, offer deployable first-class roles which enable major functionalities on big data processing and analysis. The software deployment is accommodated with Cloudmesh, Ansible, Chef, Puppet, Salt, OpenStack Heat, Microsoft Azure Template, and Amazon Cloudformation.
