@@ -1490,11 +1490,11 @@ playbook runs Ansible roles in order which looks like:
 
 
 \begin{verbatim}
-* include: sched/00-mesos.yml
-* include: proc/01-spark.yml
-* include: apps/02-opencv.yml
-* include: data/03-inria-dataset.yml
-* include: anlys/04-human-face-detection.yml
+include: sched/00-mesos.yml
+include: proc/01-spark.yml
+include: apps/02-opencv.yml
+include: data/03-inria-dataset.yml
+include: anlys/04-human-face-detection.yml
 \end{verbatim}
 	
 
@@ -1762,32 +1762,45 @@ software deployment is accommodated with Cloudmesh, Ansible, Chef,
 Puppet, Salt, OpenStack Heat, Microsoft Azure Template, and Amazon
 Cloudformation.
 
-\begin{verbatim}
-* Framework
-   * Hadoop
-   * Mesos
-* Processing
-   * Spark
-   * Storm
-* Language
-   * Pig
-   * R
-* Database
-   * HBase
-   * Hive
-   * MongoDB
-   * MySQL
-* Library
-   * Mahout
-   * nltk
-   * MLlib
-   * Lucene/Solr
-   * OpenCV
-* Tools
-   * Ganglia
-   * Nagios
-   * Zookeeper
-\end{verbatim}
+\begin{itemize}
+\item Framework
+\begin{itemize}
+   \item Hadoop
+   \item Mesos
+\end{itemize}
+\item Processing
+\begin{itemize}
+   \item Spark
+   \item Storm
+\end{itemize}
+\item Language
+\begin{itemize}
+   \item Pig
+   \item R
+\end{itemize}
+\item Database
+\begin{itemize}
+   \item HBase
+   \item Hive
+   \item MongoDB
+   \item MySQL
+\end{itemize}
+\item Library
+\begin{itemize}
+   \item Mahout
+   \item nltk
+   \item MLlib
+   \item Lucene/Solr
+   \item OpenCV
+\end{itemize}
+\item Tools
+\begin{itemize}
+   \item Ganglia
+   \item Nagios
+   \item Zookeeper
+\end{itemize}
+\end{itemize}
+
 
 In detail, table is provided:
 
