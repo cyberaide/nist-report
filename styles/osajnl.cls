@@ -140,12 +140,12 @@
 % Headers
 \fancyhead[LE]{\headerfont \begin{tabular*}{\textwidth}{!{\color{black}\vrule}c!{\color{black}\vrule} @{\extracolsep{\fill}} c!{\color{black}\vrule}}\arrayrulecolor{black}
       \hline
-      \cellcolor{black}\textcolor{white}{\ifthenelse{\boolean{shortarticle}}{\journalshorttype}{\journallongtype}} & \journalname\hspace{21pt}\thepage \\
+      \cellcolor{black}\textcolor{white}{\ifthenelse{\boolean{shortarticle}}{\journalshorttype}{\journallongtype}} & \journalname\hspace{21pt}\thepage~/~\pageref{LastPage} \\
       \hline
     \end{tabular*}}
 \fancyhead[RO]{\headerfont \begin{tabular*}{\textwidth}{!{\color{black}\vrule}c!{\color{black}\vrule} @{\extracolsep{\fill}} c!{\color{black}\vrule}}\arrayrulecolor{black}
       \hline
-      \cellcolor{black}\textcolor{white}{\ifthenelse{\boolean{shortarticle}}{\journalshorttype}{\journallongtype}} & \journalname\hspace{21pt}\thepage \\
+      \cellcolor{black}\textcolor{white}{\ifthenelse{\boolean{shortarticle}}{\journalshorttype}{\journallongtype}} & \journalname\hspace{21pt}\thepage~/~\pageref{LastPage} \\
       \hline
     \end{tabular*}}
 \fancyhead[LO,RE]{}
