@@ -357,6 +357,8 @@ user/developer is responsible.
 \begin{table*}[htb]
   \begin{center}
     \begin{small}
+      \caption{List of notable DevOps tools.}
+      \label{T:devops-tools}
       \begin{tabular}{|l|l|l|l|l|}
 
 % https://www.ansible.com/
@@ -385,8 +387,6 @@ NixOps       & NixOS Community & GPLv3            & Push      & Declarative     
 
       \end{tabular}
     \end{small}
-    \caption{List of notable DevOps tools.}
-    \label{T:devops-tools}
   \end{center}
 \end{table*}
 
@@ -585,6 +585,8 @@ experiments.
   \bigskip
   \begin{center}
     \begin{small}
+      \caption{Selected Service Description. Items prefixed with a colon (:) indicate parameters e.g. :id, :?.}
+      \label{T:rest}
       \begin{tabular}{|l|l|l|}
         \hline
         \blue \textbf{Resource} & \blue \textbf{REST Method} & \blue \textbf{Description}\tabularnewline
@@ -626,8 +628,6 @@ experiments.
 
       \end{tabular}
     \end{small}
-    \caption{Selected Service Description. Items prefixed with a colon (:) indicate parameters e.g. :id, :?.}
-    \label{T:rest}
   \end{center}
 \end{table*}
 
@@ -684,6 +684,8 @@ although Matlab is dominant in the fingerprint.
 \begin{table*}[htb]
   \begin{center}
     \begin{small}
+      \caption{Language Distribution of Topics related to those in the NIST collection on Github}
+      \label{tab:language-distribution}
       \begin{threeparttable}
 	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l}
 
@@ -696,8 +698,6 @@ although Matlab is dominant in the fingerprint.
 	  Healthcare & 2\% & 13\% & 19\% & 2\% & 14\% & 5\% & 1\% & 10\% & 6\% & 2\% & 132 \tabularnewline
 
 	\end{tabular}
-	\caption{Language Distribution of Topics related to those in the NIST collection on Github}
-	\label{tab:language-distribution}
 	\begin{tablenotes}
 	\item[*] Count: average number of github.com repositories.
 	\end{tablenotes}
@@ -739,6 +739,8 @@ Theano, mxnet and Caffe are adopted among multiple projects.
 \begin{table}[htb]
   \begin{center}
     \begin{small}
+      \caption{Additional Python packages found in NIST Collection}
+      \label{tab:additional-py-packages}
       \begin{tabular}{m{1.25cm}|m{2.25cm}|l|l|l|l|l|l}
 
     Python Package & Description              & \rot{Fingerprint} & \rot{Face} & \rot{Twitter} & \rot{Warehousing} & \rot{Geographic} & \rot{Healthcare} \\ \hline \hline
@@ -755,8 +757,6 @@ Theano, mxnet and Caffe are adopted among multiple projects.
     django         & Web framework            &                   &            &               & \OK               &                  & \OK              \\ 
 
       \end{tabular}
-      \caption{Additional Python packages found in NIST Collection}
-      \label{tab:additional-py-packages}
     \end{small}
   \end{center}
 \end{table}
@@ -769,6 +769,8 @@ dependency with a particular application.
 \begin{table*}[htb]
   \begin{center}
     \begin{small}
+      \caption{Example Projects Recently Created Regarding to Face Detection}
+      \label{tab:project-examples-face}
       \begin{tabular}{p{2cm}|p{5cm}|l|l|l|p{3cm}}
 
     Title & Description & Language & Start Date & Popularity & Dependency \\ \hline  \hline
@@ -780,8 +782,6 @@ dependency with a particular application.
 
 
   \end{tabular}
-  \caption{Example Projects Recently Created Regarding to Face Detection}
-  \label{tab:project-examples-face}
 \end{small}
   \end{center}
 \end{table*}
@@ -806,6 +806,9 @@ lists. Entire topics are available online:
 \begin{table}[htb]
   \begin{center}
     \begin{small}
+      \caption{Public Dataset of acamedia, government, organization,
+        industry and international from Community}
+      \label{tab:dataset-sector}
       \begin{tabular}{l|l|l|l|l|l|l}
 
     Category         & \rot{Academia} & \rot{Government} & \rot{Organization} & \rot{Industry} & \rot{International} & Total \\ \hline \hline
@@ -818,9 +821,6 @@ lists. Entire topics are available online:
     Energy           & 2              & 2                & 5                  & 1              & 5                   & 15    \\ 
 
       \end{tabular}
-      \caption{Public Dataset of acamedia, government, organization,
-        industry and international from Community}
-      \label{tab:dataset-sector}
     \end{small}
   \end{center}
 \end{table}
@@ -840,6 +840,8 @@ surveyed in this section.
 \begin{table}[htb]
   \begin{center}
     \begin{small}
+      \caption{Language Distribution for Big Data Classes from Indiana University}
+      \label{tab:lang-dist-iu}
       \begin{threeparttable}
         \begin{tabular}{l|l|l|l|l|l}
 
@@ -849,8 +851,6 @@ surveyed in this section.
     Fall '16   & 1    & 73     & 3  & 0   & 77             \\ 
 
         \end{tabular}
-        \caption{Language Distribution for Big Data Classes from Indiana University}
-        \label{tab:lang-dist-iu}
         % \begin{tablenotes}
         % \end{tablenotes}
       \end{threeparttable}
@@ -874,7 +874,10 @@ deployment to ensure reproducibility.
 \begin{table}[htb]
   \begin{center}
     \begin{small}
-        \resizebox{\columnwidth}{!}{
+      \caption{List of Top 15 Tools/Libraries/Packages used in Big
+        Data Class Fall 2015}
+      \label{tab:tools-fa15}
+      \resizebox{\columnwidth}{!}{
         \begin{tabular}{l|l|l|l|l}
 
     Package      & Type      & Use                       & Language        & Count\tnote{*} \\ \hline \hline
@@ -899,9 +902,6 @@ deployment to ensure reproducibility.
     Pig          & language  & data processing           & Java            & 2              \\ 
 
         \end{tabular}}
-        \caption{List of Top 15 Tools/Libraries/Packages used in Big
-          Data Class Fall 2015}
-        \label{tab:tools-fa15}
         \begin{tablenotes}
         \item[*] Count: a number of class projects in a given tool/library/package
         \end{tablenotes}
@@ -912,7 +912,9 @@ deployment to ensure reproducibility.
 \begin{table}[htb]
   \begin{center}
     \begin{small}
-  \begin{threeparttable}
+      \caption{List of Top 15 Tools/Libraries/Packages used in Big Data Class Spring 2016}
+      \label{tab:tools-sp16}
+      \begin{threeparttable}
  \resizebox{\columnwidth}{!}{
   \begin{tabular}{l|l|l|l|l}
 
@@ -934,8 +936,6 @@ deployment to ensure reproducibility.
     HDFS      & database  & distributed filesystem        & Java       & 2              \\ 
 
   \end{tabular}}
-  \caption{List of Top 15 Tools/Libraries/Packages used in Big Data Class Spring 2016}
-  \label{tab:tools-sp16}
   \begin{tablenotes}
   \item[*] Count: a number of class projects in a given tool/library/package
   \end{tablenotes}
@@ -947,6 +947,9 @@ deployment to ensure reproducibility.
 \begin{table}[htb]
   \begin{center}
     \begin{small}
+      \caption{List of Top 15 Tools/Libraries/Packages used in Big
+        Data Class Fall 2016}
+      \label{tab:tools-fa16}
       \begin{threeparttable}
         \resizebox{\columnwidth}{!}{
         \begin{tabular}{l|l|l|l|l}
@@ -969,9 +972,6 @@ deployment to ensure reproducibility.
     ploty        & library  & visualization          & Python   & 4              \\ \hline
 
         \end{tabular}}
-        \caption{List of Top 15 Tools/Libraries/Packages used in Big
-          Data Class Fall 2016}
-        \label{tab:tools-fa16}
         \begin{tablenotes}
         \item[*] Count: a number of class projects in a given tool/library/package
         \end{tablenotes}
@@ -991,16 +991,16 @@ availability e.g. amazon reviews and yelp reviews.
 \begin{table}[htb]
   \begin{center}
     \begin{small}
+      \caption{Dataset Sectors of academia, government, organization,
+        industry and international from Big Data Classes at Indiana
+        University}
+      \label{tab:dataset-sector-iu}
       \begin{tabular}{l|l|l|l|l|l|l}
 
     Class & \rot{Academia} & \rot{Government} & \rot{Organization} & \rot{Industry} & \rot{International} & Total \\ \hline \hline
     Fall '15   & 7          & 3            & 5       & 12        & 0             & 27    \\ \hline
     Spring '16 & 6          & 6            & 8       & 10         & 1             & 30    \\ \hline
       \end{tabular}
-      \caption{Dataset Sectors of academia, government, organization,
-        industry and international from Big Data Classes at Indiana
-        University}
-      \label{tab:dataset-sector-iu}
     \end{small}
   \end{center}
 \end{table}
@@ -1372,6 +1372,10 @@ In detail, table is provided:
 \begin{table*}[htb]
   \begin{center}
     \begin{small}
+      \caption{Dataset Sectors of academia, government, organization,
+        industry and international from Big Data Classes at Indiana
+        University}
+      \label{tab:dataset-sector-iu}
       \begin{tabular}{l|m{3cm}|l|m{2cm}|m{2cm}|m{2cm}|m{2cm}}
 
 	Role Name & Description & Type & Requirement (Installation) & Dependencies & Distributed & Example \tabularnewline \hline \hline
@@ -1396,10 +1400,6 @@ In detail, table is provided:
 	Pattern & Web mining python library & 	Analytics & 	Numpy (for LSA; Latent semantic analysis) & 	Python 2.5+ only, no support on 3 &  & \\ \hline
 
       \end{tabular}
-      \caption{Dataset Sectors of academia, government, organization,
-        industry and international from Big Data Classes at Indiana
-        University}
-      \label{tab:dataset-sector-iu}
     \end{small}
   \end{center}
 \end{table*}
