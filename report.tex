@@ -1386,39 +1386,11 @@ In detail, table is provided:
 
 	Role Name & Description & Type & Requirement (Installation) & Dependencies & Distributed & Example \tabularnewline \hline \hline
 	Spark & In-memory data processing application & processing & JDK 7+ Maven 3.3.9 & Hadoop (optional) & 	Cluster Manager/Executor (Worker node) & 	  \\ \hline
-
-	hadoop & 
-	Map/Reduce distributed processing framework & 
-	framework & 
-	JDK & 
-	Resource Manager/Node Manager & 
-	WordCount &   \\ \hline
-
-	Storm & 
-	a real time fault-tolerant and distributed stream data processing system & 
-	processing & 
-	OpenJDK & 
-	ZooKeeper &
-	Master/Worker &
-	\\ \hline
-
-	Zookeeper & 
-	Synchronization service for distributed processes & 
-	tool & 
-	JDK 6+ &  & 
-	Ensemble (3 servers minimum) & 
-	\\ \hline
-
-	hbase & 
-	NoSQL database for real-time processing & 
-	database & 
-	JDK & 
-	ZooKeeper & 
-	Master/RegionServer & 
-\\ \hline
-
+	hadoop & Map/Reduce distributed processing framework & framework & JDK & Resource Manager/Node Manager & & WordCount   \\ \hline
+	Storm &	a real time fault-tolerant and distributed stream data processing system & processing & OpenJDK & ZooKeeper & Master/Worker &	\\ \hline
+	Zookeeper & Synchronization service for distributed processes & tool & JDK 6+ &  & Ensemble (3 servers minimum) & 	\\ \hline
+	hbase &	NoSQL database for real-time processing & database & JDK & ZooKeeper & Master/RegionServer & \\ \hline
 	Twitter REST APIs & Reading Twitter data & library & 	 & OAuth & &  \\ \hline
-	
 	D3, tableau &  Javascript visualization library & visualization & &  & &  \\ \hline
 	Nltk & Natural Language Toolkit & library & Python2.7 or 3.2+ & Numpy (optional) & 	 & \\ \hline
 	AlchemyAPI & Collecting Tweets & library & Mongodb, R (ggplot2) & 	 &  & \\ \hline
@@ -1432,9 +1404,6 @@ In detail, table is provided:
 	RethinkDB & NoSQL, distributed document-oriented (JSON) database & application &  & & sharding/replication supported & \\ \hline
 	TextBlob & Natural language processing (NLP) Python library & 	Analytics & 	NLTK corpora & & & \\ \hline
 	Pattern & Web mining python library & 	Analytics & 	Numpy (for LSA; Latent semantic analysis) & 	Python 2.5+ only, no support on 3 &  & \\ \hline
-
-
-
 
       \end{tabular}
       \caption{Dataset Sectors of academia, government, organization,
