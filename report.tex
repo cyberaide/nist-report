@@ -54,6 +54,8 @@
 \usepackage[colorinlistoftodos,prependcaption,textsize=normalsize]{todonotes}
 \usepackage[justification=centering]{caption}
 
+\usepackage{threeparttable}
+
 
 
 
@@ -635,111 +637,33 @@ based on the survey results.
 
 \subsubsection{Language Preference}
 
-TODO
-Topic
-	C++
-	Python
-	Java
-	Matlab
-	JS
-	C\#
-	C
-	R
-	Ruby
-	Scala
-	Count
-	Fingerprint
-	15%
-	11%
-	13%
+The repository statistics indicate that C++, Python and Java are most common
+languages among the NIST collection (Table~\ref{tab:language-distribution}),
+although Matlab is dominant in the fingerprint.
 
-	20%
-	3%
-
-	16%
-	8%
-	0%
-	1%
-	5%
-	43
-
-	FaceDetection
-	26%
-	21%
-	12%
-	9%
-	7%
-	5%
-	2%
-	2%
-	1%
-	.02%
-	538
-
-	Twitter
-	2%
-	35%
-
-	15%
-	.6%
-	9%
-	2%
-	1%
-	10%
-	3%
-
-	1%
-	1429
-	Warehousing
-	3%
-
-	27%
-	18%
-	2%
-	10%
-	3%
-
-	1%
-	10%
-	4%
-	1%
-	3435
-
-	Geographic
-	5%
-	15%
-	27%
-	4%
-	15%
-	3%
-
-	5%
-	7%
-	3%
-
-	16%
-	6487
-	Healthcare
-	2%
-	13%
-
-	19%
-	2%
-	14%
-	5%
-	1%
-	10%
-	6%
-	2%
-	132
-
-	Table ?:  Language Distribution of Topics related to those in the NIST collection on Github, Count is an average number of github repositories.
-
-
-        The repository statistics indicate that C++, Python and Java
-        are most common languages among the NIST collection (Table 1),
-        although Matlab is dominant in the fingerprint.
-
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
+      \begin{threeparttable}
+	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l}
+	  \hline
+	  \blue \textbf{Topic} & \blue \textbf{C++} &  \blue \textbf{Python} &  \blue \textbf{Java} &  \blue \textbf{Matlab} &  \blue \textbf{JS} &  \blue \textbf{C\#} &  \blue \textbf{C} &  \blue \textbf{R} &  \blue \textbf{Ruby} &  \blue \textbf{Scala} &  \blue \textbf{Count\tnote{*}} \tabularnewline \hline
+	  Fingerprint& 15\% & 11\% & 13\% & 20\% & 3\% & 16\% & 8\% & 0\% & 1\% & 5\% & 43 \tabularnewline \hline
+	  Face & 26\% & 21\% & 12\% & 9\% & 7\% & 5\% & 2\% & 2\% & 1\% & .02\% & 538 \tabularnewline \hline
+	  Twitter & 2\% & 35\% & 15\% & .6\% & 9\% & 2\% & 1\% & 10\% & 3\% & 1\% & 1429 \tabularnewline \hline
+	  Warehousing & 3\% & 27\% & 18\% & 2\% & 10\% & 3\% & 1\% & 10\% & 4\% & 1\% & 3435  \tabularnewline \hline
+	  Geographic & 5\% & 15\% & 27\% & 4\% & 15\% & 3\% & 5\% & 7\% & 3\% & 16\% & 6487 \tabularnewline \hline
+	  Healthcare & 2\% & 13\% & 19\% & 2\% & 14\% & 5\% & 1\% & 10\% & 6\% & 2\% & 132 \tabularnewline
+	\end{tabular}
+	\caption{Language Distribution of Topics related to those in the NIST collection on Github}
+	\label{tab:language-distribution}
+	\begin{tablenotes}
+	\item[*] Count: average number of github.com repositories.
+	\end{tablenotes}
+      \end{threeparttable}
+    \end{small}
+  \end{center}
+\end{table*}
 
 \subsubsection{Package/Library/Tool Dependencies}
 
@@ -766,160 +690,55 @@ Caffe are adopted among multiple projects.
 
 Figure FIXME: Python Packages used in NIST Collection on Github
 
-Python Package
-	Description
-	N1
-	N2
-	N3
 
-	N4
-	N5
-	N6
-	cv2
-	OpenCV
-	+
-	+
-	 
-	 
-	 
-	 
-	skimage
-	Image Processing
-	 
-	+
-	 
-	 
-	 
-	 
-	PIL
-	Python Imaging Library
-	 
-	+
-	 
-	 
-	 
-	 
-	caffe
-	Deep Learning
-	 
-	+
-	 
-	 
-	 
-	 
-	nltk
-	Natural Language Toolkit
-	 
-	 
-	+
-	 
-	 
-	 
-	tweepy
-	Twitter for Python
-	 
-	 
-	+
-	 
-	 
-	 
-	BeautifulSoup
-	Screen-scraping library
-	 
-	 
-	+
-	+
-	 
-	 
-	gensim
-	Topic Modelling
-	 
-	 
-	+
-	+
-	 
-	 
-	geopy
-	Geocoding library
-	 
-	 
-	 
-	 
-	+
-	 
-	shapely
-	Geometric Analysis
-	 
-	 
-	 
-	 
-	+
-	 
-	django
-	Web framework
-	 
-	 
-	 
-	+
-	 
-	+
-	Table FIXME: Additional Python Packages found in NIST
-        Collection where N1: Fingerprint Matching, N2: Face Detection,
-        N3: Twitter Analysis, N4: Data Warehousing, N5: Geographic
-        Information Systems, and N6: Healthcare Data
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
+  \begin{tabular}{l|l|l|l|l|l|l|l}
+    Python Package & Description & \rot{Fingerprint} & \rot{Face} & \rot{Twitter} & \rot{Warehousing} & \rot{Geographic} & \rot{Healthcare} \\ \hline \hline
+    cv2 & OpenCV & \OK & \OK & & & & \\ \hline
+    skimage & Image Processing & & \OK & & & & \\ \hline
+    PIL & Python Imaging Library & & \OK & & & & \\ \hline
+    caffe & Deep Learning & & \OK & & & & \\ \hline
+    nltk & Natural Language Toolkit & & & \OK & & & \\ \hline
+    tweepy & Twitter for Python & & & \OK & & & \\ \hline
+    BeautifulSoup & Screen-scraping library & & & \OK & \OK & & \\ \hline
+    gensim & Topic Modelling & & & \OK & \OK & \\ \hline
+    geopy & Geocoding library & & & & & \OK & \\ \hline
+    shapely & Geometric Analysis & & & & & \OK & \\ \hline
+    django & Web framework & & & & \OK & & \OK \\ 
+  \end{tabular}
+  \caption{Additional Python packages found in NIST Collection}
+  \label{tab:additional-py-packages}
+    \end{small}
+  \end{center}
+\end{table*}
 
 
+Additional packages or libraries (table FIXME) are not required in
+a default set of big data ecosystem but it is necessary to indicate the
+dependency with a particular application. 
 
-Additional packages or libraries (table FIXME) are not mandatory to provide in a default set of big data suite but it is necessary to see the dependency with a particular application. The choice of applications affects the dependency tools.
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
 
-
-Title
-	Description
-	Language
-	Start Date
-	Popularity
-	Dependency
-	OpenFace
-	an  open  source  facial   behavior analysis toolkit
-	c++
-	March, 2016
-	725 (305)
-
-	OpenCV,                dlib,
-boost, TBB
-	Picasso  face
-detection transformation
-	An  Android  image   transformation library providing cropping above Face Detection (Face Cen tering) for Picasso
-	Java
-	July, 2016
-	528 (56)
-	Square Picasso
-	MTCNN
-face               detection alignment
-	Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Neural Networks
-	Matlab
-	September, 2016
-	226 (162)
-	Caffe,  Pdollar toolbox
-	facematch
-	Facebook Face           Recognition
-wrapper
-	JavaScript
-	January, 2016
-	132 (41)
-
-	fbgraph,           request,
-body-parser,             express
-	mxnet mtcnn face detection
-	MTCNN face detection
-	Python
-	October, 2016
-	99 (47)
-	OpenCV, mxnet
-	Table FIXME: Example Projects Recently Created Regarding to Face Detection
+  \begin{tabular}{p{2cm}|p{5cm}|l|l|l|p{3cm}}
+    Title & Description & Language & Start Date & Popularity & Dependency \\ \hline  \hline
+    OpenFace &  an open source facial behavior analysis toolkit & c++ & March, 2016 & 725 (305) & OpenCV, dlib, boost, TBB \\ \hline
+    Picasso face detection transformation & An Android image transformation library providing cropping above Face Detection (Face Centering) for Picasso & Java & July, 2016 & 528(56) & Square Picasso \\ \hline
+    MTCNN face detection alignment & Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Neural Networks & Matlab & September, 2016 & 226(162)  &  Caffe, Pdollar toolbox \\ \hline
+    facematch & Facebook Face Recognition wrapper & JavaScript & January, 2016 & 132 (41) & fbgraph, request, body-parser, express \\ \hline
+    mxnet mtcnn face detection & MTCNN face detection & Python  & October, 2016 & 99 (47) & OpenCV, mxnet \\ 
+  \end{tabular}
+  \caption{Example Projects Recently Created Regarding to Face Detection}
+  \label{tab:project-examples-face}
+\end{small}
+  \end{center}
+\end{table*}
 
 
-\subsubsection{Datasets }
+\subsubsection{Datasets}
 
 Finding relevant datasets for particular applications is another
 challenge for the big data ecosystem because of its difficulty of
@@ -936,108 +755,55 @@ international(country code in suffix), among the seven topics of the
 lists. Entire topics are available online:
 \url{https://github.com/lee212/bd_datasets}.
 
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
+  \begin{tabular}{l|l|l|l|l|l|l}
+    Category & Academia & Government & Organization & Industry & International & Total \\ \hline \hline
+    GIS & 1 & 3 & 5 & 9 & 5 & 23 \\ \hline
+    Healthcare & 0 & 6 & 3 & 1 & 1 & 11 \\ \hline
+    Image Processing & 11 & 0 & 4 & 2 & 5 & 18 \\ \hline
+    Natural Language & 7 & 0 & 8 & 7 & 6 & 26 \\ \hline
+    Social Networks & 8 & 0 & 7 & 5 & 5 & 24 \\ \hline
+    Climate/Weather & 2 & 6 & 3 & 2 & 4 & 16 \\ \hline
+    Energy & 2 & 2 & 5 & 1 & 5 & 15 \\ 
+  \end{tabular}
+  \caption{Public Dataset of acamedia, government, organization, industry and international from Community}
+  \label{tab:dataset-sector}
+\end{small}
+  \end{center}
+\end{table*}
 
-Topic
-	Academia
-	Government
-	Organization
-	Industry
-	International
-	Total
-	GIS
-	1
-	3
-
-	5
-	9
-	5
-	23
-
-	Healthcare
-	0
-	6
-	3
-
-	1
-	1
-	11
-	Image Processing
-	11
-	0
-	4
-	2
-	5
-	18
-	Natural Language
-	7
-	0
-	8
-	7
-	6
-	26
-	Social Networks
-	8
-	0
-	7
-	5
-	5
-	24
-	Climate/Weather
-	2
-	6
-	3
-
-	2
-	4
-	16
-	Energy
-	2
-	2
-	5
-	1
-	5
-	15
-	Table FIXME:  Public Dataset of acamedia, government, organization, industry and international from the community list
 
 \subsection{Analysis on Big Data Projects from Academia}
 
 At Indiana University, Big Data Analytics and Applications (BDAA) and
 Big Data Open Source Software Projects (BDOSSP) have been offered in
-2015 and 2016 according. During these semesters, students have asked
+2015 and 2016 accordingly. During these semesters, students have asked
 to complete a course project with big data software, tools and
-datasets. The statistics for languages, software, and dataset are
-provided in this section.
-
+datasets. The choice of languages, software, and dataset are
+surveyed in this section.
 
 \subsubsection{Language Preference}
 
-Class
-	Java
-	Python
-	R
-	C\#
-	Projects Count
-	Fall ’15
-	6
-	29
-	10
-	1
-	49
-	Spring ’16
-	11
-	16
-	1
-	0
-	37
-
-	Fall ’16*
-	2
-	146
-	7
-	0
-	190
-	Table  FIXME:  Language Distribution for Big Data Classes from Indiana University
-(* Numbers in Table don’t sum up to total count - need to confirm)
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}}
+  \begin{threeparttable}
+  \begin{tabular}{l|l|l|l|l|l}
+    Class & Java & Python & R & C\# & Projects Count \\ \hline \hline
+    Fall '15 & 6 & 29 & 10 & 1 & 49 \\ \hline
+    Spring '16 & 11 & 16 & 1 & 0 & 37 \\ \hline
+    Fall '16 & 1 & 73 & 3 & 0 & 77 \\ 
+  \end{tabular}
+  \caption{Language Distribution for Big Data Classes from Indiana University}
+  \label{tab:lang-dist-iu}
+  \begin{tablenotes}
+  \end{tablenotes}
+  \end{threeparttable}
+\end{small}
+  \end{center}
+\end{table*}
 
 
 \subsubsection{Package/Library/Tool Dependencies}
@@ -1051,310 +817,99 @@ of Spark in data processing with the python library, pyspark. One
 another observation is that Ansible, software deployment tool, had
 offered as a method of project deployment to ensure reproducibility.
 
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
+      \begin{threeparttable}
+  \begin{tabular}{l|l|l|l|l}
+    Package & Type & Use & Language & Count\tnote{*} \\ \hline \hline
+    Numpy & library & data management & Python & 13 \\ \hline
+    Pandas & library & data management & Python & 10 \\ \hline
+    Matplotlib & library & visualization & Python & 8 \\ \hline
+    Scipy & library & data management & Python & 6 \\ \hline
+    Mongodb & database & NoSQL & C++ & 10 \\ \hline
+    Hadoop & framework & parallel processing & Java & 6 \\ \hline
+    Nltk & library & NLP & Python & 5 \\ \hline
+    ggplot2 & library & visulization & R & 4 \\ \hline
+    scikit-learn & library & machine learning & Python & 7 \\ \hline
+    IPython Notebook & Tool & Web Interface & Python & 4 \\ \hline
+    Tableau & Tool & visualization & C++ & 4 \\ \hline
+    rstudio & Tool & development IDE & R & 3 \\ \hline
+    seaborn & library & visualization & Python & 3 \\ \hline
+    Spark & framework & in-memory processing & Scala & 3 \\ \hline
+    Randomforest & library & classification & R & 2 \\ \hline
+    Hbase & database & NoSQL & Java & 2 \\ \hline
+    Folium & library & visualization & Python & 2 \\ \hline
+    MPI & framework & parallel processing & C, C++, Fortran & 2 \\ \hline
+    Pig & language & data processing & Java & 2 \\ 
+  \end{tabular}
+  \caption{List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2015}
+  \label{tab:tools-fa15}
+  \begin{tablenotes}
+  \item[*] Count: a number of class projects in a given tool/library/package
+  \end{tablenotes}
+  \end{threeparttable}
+\end{small}
+  \end{center}
+\end{table*}
 
 
 
-
-Package
-	Type
-	Use
-	Language
-	Count
-	Numpy
-	library
-	data management
-	Python
-	13
-
-	Pandas
-	library
-	data management
-	Python
-	10
-	Mongodb
-	database
-	NoSQL
-	C++
-	10
-	Matplotlib
-	library
-	visualization
-	Python
-	8
-	scikit-learn
-	library
-	machine learning
-	Python
-	7
-	Scipy
-	library
-	data management
-	Python
-	6
-	Hadoop
-	framework
-	framework
-	Java
-	6
-	Nltk
-	library
-	NLP
-	Python
-	5
-	ggplot1
-	library
-	visualization
-	R
-	4
-	IPython Notebook
-	tool
-	web interface
-	Python
-	4
-	Tableau
-	tool
-	visualization
-	C++
-	4
-	seaborn
-	library
-	visualization
-	Python
-	3
-
-	rstudio
-	tool
-	development IDE
-	R
-	3
-
-	Spark
-	framework
-	in-memory processing
-	Scala
-	3
-
-	MPI
-	framework
-	parallel processing
-	C, C++, Fortran
-	2
-	Table FIXME: List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2015, count indicates a number of class projects that use a particular tool/library/package
-
-
-Package
-	Type
-	Use
-	Language
-	Count
-	Hadoop
-	framework
-	parallel processing
-	Java
-	31
-
-	Ansible
-	tool
-	deployment
-	Python
-	26
-	Spark
-	framework
-	in-memory processing
-	Scala
-	14
-	HBase
-	database
-	NoSQL
-	Java
-	12
-v	Pig
-	language
-	data abstraction
-	Java
-	11
-	Hive
-	database
-	SQL
-	Java
-	7
-	MongoDB
-	database
-	NoSQL
-	C++
-	7
-	Mahout
-	library
-	machine learning, data minig
-	Java
-	4
-	MLLib
-	library
-	machine learning
-	Java
-	4
-	OpenCV
-	library
-	computer vision
-	C++
-	3
-
-	Zookeeper
-	framework
-	directory service
-	Java
-	3
-
-	Tableau
-	tool
-	visualization
-	C++
-	3
-
-	D3.js
-
-	tool
-	visualization
-	Javascript
-	2
-	MySQL
-	database
-	SQL
-	C++
-	2
-	HDFS
-	database
-	distributed filesystem
-	Java
-	2
-	Table FIXME: List of Top 15 Tools/Libraries/Packages used in Big Data Class Spring 2016, count indicates a number of class projects that use a particular tool/library/package
-
-
-Package
-	Type
-	Use
-	Language
-	Count
-	Matplotlib
-	library
-	visualization
-	python
-	88
-	Pandas
-	library
-	data management
-	python
-	79
-	Numpy
-	library
-	data management
-	python
-	65
-	Scipy
-	library
-	data management
-	python
-	24
-	Requests
-	library
-	http tool
-	python
-	22
-	xlrd
-	library
-	MS Excel
-	python
-	10
-	pillow
-	library
-	Imaging Library
-	python
-	9
-	scikit-learn
-	library
-	machine learning
-	python
-	9
-	seaborn
-	library
-	visualization
-	python
-	8
-	nltk
-	library
-	language processing
-	python
-	6
-	geopy
-	library
-	geospatial tool
-	python
-	5
-	pyOpenSSL
-	library
-	OpenSSL
-	python
-	5
-	patsy
-	library
-	statistics
-	python
-	5
-	bokeh
-	library
-	visualization
-	python
-	4
-	ploty
-	library
-	visualization
-	python
-	4
-	Table FIXME: List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2016, count indicates a number of class projects that use a particular tool/library/package
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
+  \begin{threeparttable}
+  \begin{tabular}{l|l|l|l|l}
+    Package & Type & Use & Language & Count\tnote{*} \\ \hline \hline
+    HDFS & database & distributed filesystem & Java & 2 \\ 
+    Matplotlib & library & visualization & python & 88 \\ \hline
+    Pandas & library & data management & python & 79 \\ \hline
+    Numpy & library & data management & python & 65 \\ \hline
+    Scipy & library & data management & python & 24 \\ \hline
+    Requests & library& http tool & Python & 22 \\ \hline
+    xlrd & library & MS Excel & Python & 10 \\ \hline
+    pillow & library & imaging library & Python & 9 \\ \hline
+    scikit-learn & library & machine learning & Python & 9 \\ \hline
+    seaborn & library & visualization & Python & 8 \\ \hline
+    nltk & library & language processing & Python & 6 \\ \hline
+    geopy & library & geospatial tool & Python & 5 \\ \hline
+    pyOpenSSL & library & OpenSSL & Python & 5 \\ \hline
+    patsy & library & statistics & Python & 5 \\ \hline
+    bokeh & library & visualization & Python & 4 \\ \hline
+    ploty & library & visualization & Python & 4 \\ \hline
+  \end{tabular}
+  \caption{List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2016}
+  \label{tab:tools-sp16}
+  \begin{tablenotes}
+  \item[*] Count: a number of class projects in a given tool/library/package
+  \end{tablenotes}
+  \end{threeparttable}
+\end{small}
+  \end{center}
+\end{table*}
 
 
 \subsubsection{Datasets}
 
-There were 49 class project in Big Data Analytics and applications Fall 2015, and use of 27 dataset are observed. Public dataset from industry was mainly used (44%) due to the interest on analytics from kaggle and twitter and availability e.g. amazon reviews and yelp reviews.
+There were 49 class project in Big Data Analytics and applications Fall 2015,
+and use of 27 dataset are observed. Public dataset from industry was mainly
+used (44\%) due to the interest on analytics from kaggle and twitter and
+availability e.g. amazon reviews and yelp reviews.
 
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
 
-Class
-	Government
-	Organization
-	Industry
-	Academia
-	International
-	Total
-	Fall ‘15
-	3
-
-	5
-	12
-	7
-	0
-	27
-	Spring ‘16
-	6
-	8
-	10
-	6
-	1
-	30
-
-	Fall ‘16
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	Table FIXME: Dataset sectors of academia, government, organization and industry from Big Data Classes at Indiana University * Fall ‘16 will be added
+  \begin{tabular}{l|l|l|l|l|l|l}
+    Class & Government & Organization & Industry & Academia & International & Total \\ \hline \hline
+    Fall '15 & 3 & 5 & 12 & 7 & 0 & 27 \\ \hline
+    Spring '16 & 6 & 8 & 10 & 6 & 1 & 30 \\ \hline
+  \end{tabular}
+  \caption{Dataset Sectors of academia, government, organization, industry and international from Big Data Classes at Indiana University}
+  \label{tab:dataset-sector-iu}
+\end{small}
+  \end{center}
+\end{table*}
 
 
 
