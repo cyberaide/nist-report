@@ -57,7 +57,8 @@
 \usepackage{threeparttable}
 
 
-
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
+\newcommand{\FIXME}[1]{\TODO{WILL BE FIXED BEFORE SUBMISSION BY #1}}
 
 \setcounter{secnumdepth}{4}
 
@@ -111,6 +112,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\TODO{ALL TODOS WILL BE FIXED BEFORE FINAL SUBMISSION}
 
 \section{Overview}
 
@@ -135,9 +137,12 @@ then conclude with some lessons learned and ideas for future work.
 
 \section{Summary of Changes from Last Update}
 
-Previous update described FIXME.  Since then, we have begun
-development of an API with a REST frontend for bringing up and
-deploying several of the technologies used by the Use Cases
+Previous update described FIXME.  \TODO{THIS IS NOT NEEDED YOU JUST
+  NEED TO SUMMARIZE WHAT THIS REPORT HAS NEW OR IMPROVED, SO I DO NOT
+  GET WHAT FIX ME WOULD DO? IS THIS NOT ALREADY WRITTEN IN OVERVIEW?}
+Since then, we have begun development of an API with a REST frontend
+for bringing up and deploying several of the technologies used by the
+Use Cases
 
 
 
@@ -404,7 +409,7 @@ developed them.
 
 \item[Composition] A Composition is a group of Stacks that as a whole
   represent the deployment of a group of technologies. For instance
-  Figure FIXME shows that in order to provide Fingerprint Matching as
+  Figure \FIXME{Who?} shows that in order to provide Fingerprint Matching as
   a service, one would need a Web stack, a Fingerprint stack, and the
   Hadoop stack.
 
@@ -445,8 +450,8 @@ developed them.
 
 \item[Deployment/Evaluation] A Deployment defines DevOps
   application-specific interface to evaluate Compositions.  Figure
-  FIXME shows how the sample Fingerprint service stack shown in Figure
-  FIXME may be evaluated. First the Daemon Watcher stack is deployed,
+  \FIXME{Who?} shows how the sample Fingerprint service stack shown in Figure
+  \FIXME{Who?} may be evaluated. First the Daemon Watcher stack is deployed,
   as it is required by Hadoop. Although Java Stack is required for
   Hadoop, Spark, HBase, and Drill, it should only be evaluated once
   per node. The Fingerpring and Web stack may potentially be evaluated
@@ -669,15 +674,15 @@ although Matlab is dominant in the fingerprint.
 
 We also notice that scientific python packages are commonly used to
 enable numerical computation, data analysis and visualization for
-these big data applications (Figure FIXME), whereas there are dependent
-packages for each project (Table FIXME). Tweepy, twitter API, is used in
+these big data applications (Figure \FIXME{Who}), whereas there are dependent
+packages for each project (Table \FIXME{Who?}). Tweepy, twitter API, is used in
 the twitter live analysis projects with NLTK, the natural language
 processing toolkit to complete sentiment analysis with streaming data,
 tweets. Similarly, GIS projects use particular libraries for spatial
 analysis such as geopy and shapely. New trends in software development
 packages and libraries are observed, for example, deep learning python
 packages e.g. caffe or theano have added recently to github
-repositories. Statistics (tables FIXME) show that popular github
+repositories. Statistics (tables \FIXME{Who?}) show that popular github
 repository examples related to the six nist projects started in
 2016. Each github project has different language preferences with
 various libraries and packages however similar trends are observed,
@@ -688,8 +693,164 @@ Caffe are adopted among multiple projects.
 
   
 
-Figure FIXME: Python Packages used in NIST Collection on Github
+Figure \FIXME{Who?}: Python Packages used in NIST Collection on Github
 
+<<<<<<< HEAD
+Python Package
+	Description
+	N1
+	N2
+	N3
+
+	N4
+	N5
+	N6
+	cv2
+	OpenCV
+	+
+	+
+	 
+	 
+	 
+	 
+	skimage
+	Image Processing
+	 
+	+
+	 
+	 
+	 
+	 
+	PIL
+	Python Imaging Library
+	 
+	+
+	 
+	 
+	 
+	 
+	caffe
+	Deep Learning
+	 
+	+
+	 
+	 
+	 
+	 
+	nltk
+	Natural Language Toolkit
+	 
+	 
+	+
+	 
+	 
+	 
+	tweepy
+	Twitter for Python
+	 
+	 
+	+
+	 
+	 
+	 
+	BeautifulSoup
+	Screen-scraping library
+	 
+	 
+	+
+	+
+	 
+	 
+	gensim
+	Topic Modelling
+	 
+	 
+	+
+	+
+	 
+	 
+	geopy
+	Geocoding library
+	 
+	 
+	 
+	 
+	+
+	 
+	shapely
+	Geometric Analysis
+	 
+	 
+	 
+	 
+	+
+	 
+	django
+	Web framework
+	 
+	 
+	 
+	+
+	 
+	+
+	Table \FIXME{Who?}: Additional Python Packages found in NIST
+        Collection where N1: Fingerprint Matching, N2: Face Detection,
+        N3: Twitter Analysis, N4: Data Warehousing, N5: Geographic
+        Information Systems, and N6: Healthcare Data
+
+
+
+Additional packages or libraries (table \FIXME{Who?}) are not mandatory to provide in a default set of big data suite but it is necessary to see the dependency with a particular application. The choice of applications affects the dependency tools.
+
+
+Title
+	Description
+	Language
+	Start Date
+	Popularity
+	Dependency
+	OpenFace
+	an  open  source  facial   behavior analysis toolkit
+	c++
+	March, 2016
+	725 (305)
+
+	OpenCV,                dlib,
+boost, TBB
+	Picasso  face
+detection transformation
+	An  Android  image   transformation library providing cropping above Face Detection (Face Cen tering) for Picasso
+	Java
+	July, 2016
+	528 (56)
+	Square Picasso
+	MTCNN
+face               detection alignment
+	Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Neural Networks
+	Matlab
+	September, 2016
+	226 (162)
+	Caffe,  Pdollar toolbox
+	facematch
+	Facebook Face           Recognition
+wrapper
+	JavaScript
+	January, 2016
+	132 (41)
+
+	fbgraph,           request,
+body-parser,             express
+	mxnet mtcnn face detection
+	MTCNN face detection
+	Python
+	October, 2016
+	99 (47)
+	OpenCV, mxnet
+	Table \FIXME{Who?}: Example Projects Recently Created Regarding to Face Detection
+
+
+\subsubsection{Datasets }
+=======
 
 \begin{table}[htb]
   \begin{center}
@@ -752,7 +913,7 @@ lists of public datasets (Cohen and Lo,2014) provide structured
 information with a specific location to access data and a category to
 describe itself. We intend to generate linked json data for datasets
 and applications in big data ecosystem based on these lists because it
-connects scattered data and software in an organized way. Table FIXME
+connects scattered data and software in an organized way. Table \FIXME{Who?}
 shows the data source from different sectors, academia(.edu or .ac),
 government(.gov), organization(.org), industry(.com or .net), and
 international(country code in suffix), among the seven topics of the
@@ -815,10 +976,11 @@ surveyed in this section.
 \end{table}
 
 
+
 \subsubsection{Package/Library/Tool Dependencies}
 
 We had 37 final projects from Big Data Open Source Project Spring 2016
-and Table FIXME shows that packages/tools/libraries used in the class
+and Table \FIXME{Who?} shows that packages/tools/libraries used in the class
 projects. Apache Hadoop is mostly used in conducting data analysis
 with a database support from HBase, Hive and HDFS. Python was the most
 preferred language in the course projects which resulted in high use
@@ -865,6 +1027,265 @@ offered as a method of project deployment to ensure reproducibility.
 
 
 
+<<<<<<< HEAD
+
+Package
+	Type
+	Use
+	Language
+	Count
+	Numpy
+	library
+	data management
+	Python
+	13
+
+	Pandas
+	library
+	data management
+	Python
+	10
+	Mongodb
+	database
+	NoSQL
+	C++
+	10
+	Matplotlib
+	library
+	visualization
+	Python
+	8
+	scikit-learn
+	library
+	machine learning
+	Python
+	7
+	Scipy
+	library
+	data management
+	Python
+	6
+	Hadoop
+	framework
+	framework
+	Java
+	6
+	Nltk
+	library
+	NLP
+	Python
+	5
+	ggplot1
+	library
+	visualization
+	R
+	4
+	IPython Notebook
+	tool
+	web interface
+	Python
+	4
+	Tableau
+	tool
+	visualization
+	C++
+	4
+	seaborn
+	library
+	visualization
+	Python
+	3
+
+	rstudio
+	tool
+	development IDE
+	R
+	3
+
+	Spark
+	framework
+	in-memory processing
+	Scala
+	3
+
+	MPI
+	framework
+	parallel processing
+	C, C++, Fortran
+	2
+	Table \FIXME{Who?}: List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2015, count indicates a number of class projects that use a particular tool/library/package
+
+
+Package
+	Type
+	Use
+	Language
+	Count
+	Hadoop
+	framework
+	parallel processing
+	Java
+	31
+
+	Ansible
+	tool
+	deployment
+	Python
+	26
+	Spark
+	framework
+	in-memory processing
+	Scala
+	14
+	HBase
+	database
+	NoSQL
+	Java
+	12
+v	Pig
+	language
+	data abstraction
+	Java
+	11
+	Hive
+	database
+	SQL
+	Java
+	7
+	MongoDB
+	database
+	NoSQL
+	C++
+	7
+	Mahout
+	library
+	machine learning, data minig
+	Java
+	4
+	MLLib
+	library
+	machine learning
+	Java
+	4
+	OpenCV
+	library
+	computer vision
+	C++
+	3
+
+	Zookeeper
+	framework
+	directory service
+	Java
+	3
+
+	Tableau
+	tool
+	visualization
+	C++
+	3
+
+	D3.js
+
+	tool
+	visualization
+	Javascript
+	2
+	MySQL
+	database
+	SQL
+	C++
+	2
+	HDFS
+	database
+	distributed filesystem
+	Java
+	2
+	Table \FIXME{Who?}: List of Top 15 Tools/Libraries/Packages used in Big Data Class Spring 2016, count indicates a number of class projects that use a particular tool/library/package
+
+
+Package
+	Type
+	Use
+	Language
+	Count
+	Matplotlib
+	library
+	visualization
+	python
+	88
+	Pandas
+	library
+	data management
+	python
+	79
+	Numpy
+	library
+	data management
+	python
+	65
+	Scipy
+	library
+	data management
+	python
+	24
+	Requests
+	library
+	http tool
+	python
+	22
+	xlrd
+	library
+	MS Excel
+	python
+	10
+	pillow
+	library
+	Imaging Library
+	python
+	9
+	scikit-learn
+	library
+	machine learning
+	python
+	9
+	seaborn
+	library
+	visualization
+	python
+	8
+	nltk
+	library
+	language processing
+	python
+	6
+	geopy
+	library
+	geospatial tool
+	python
+	5
+	pyOpenSSL
+	library
+	OpenSSL
+	python
+	5
+	patsy
+	library
+	statistics
+	python
+	5
+	bokeh
+	library
+	visualization
+	python
+	4
+	ploty
+	library
+	visualization
+	python
+	4
+	Table \FIXME{Who?}: List of Top 15 Tools/Libraries/Packages used in Big Data Class Fall 2016, count indicates a number of class projects that use a particular tool/library/package
+=======
 \begin{table}[htb]
   \begin{center}
     \begin{small}
@@ -913,11 +1334,9 @@ availability e.g. amazon reviews and yelp reviews.
   \begin{center}
     \begin{small}
       \begin{tabular}{l|l|l|l|l|l|l}
-
     Class      & Government & Organization & Industry & Academia & International & Total \\ \hline \hline
     Fall '15   & 3          & 5            & 12       & 7        & 0             & 27    \\ \hline
     Spring '16 & 6          & 8            & 10       & 6        & 1             & 30    \\ \hline
-
       \end{tabular}
       \caption{Dataset Sectors of academia, government, organization,
         industry and international from Big Data Classes at Indiana
@@ -1030,9 +1449,9 @@ Implementation repository:\\
 
 Human detection and face detection have been studied during the last
 several years and models for them have improved along with Histograms
-of Oriented Gradients (HOG) for Human Detection [FIXME]. OpenCV is a
+of Oriented Gradients (HOG) for Human Detection [ \FIXME{Who?} ]. OpenCV is a
 Computer Vision library including the SVM classifier and the HOG
-object detector for pedestrian detection and INRIA Person Dataset [FIXME]
+object detector for pedestrian detection and INRIA Person Dataset [\FIXME{Who?}]
 is one of popular samples for both training and testing purposes. This
 example shows how to deploy the NIST Human and Face Detection with
 INRIA Person Dataset to the cluster where we deployed Apache Spark on
@@ -1042,11 +1461,11 @@ distributed job processing on the Mesos scheduler.
   
   
 
-FIXME Figure 1. Human Detection, original image (left), processed image (right)
+\FIXME{Who?} Figure 1. Human Detection, original image (left), processed image (right)
   
   
 
-FIXME Figure 2. Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box)
+\FIXME{Who?} Figure 2. Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box)
 
 
 When it comes to deploy applications and build clusters for
@@ -1165,7 +1584,7 @@ et al., 2014) and deep learning systems (Kim, 2014). Services for
 streaming data processing are important in this category. Apache Storm
 is widely used with the example of twitter sentiment analysis, and
 Twitter Heron, Google Millwheel, LindkedIn Samza, and Facebook Puma,
-Swift, and Stylus are available as well (FIXME Chen et al., 2016).
+Swift, and Stylus are available as well (\FIXME{Who?} Chen et al., 2016).
 
 \subsubsection{Software Stack}
 
@@ -1204,11 +1623,11 @@ processing, signal analytics and genome wide analysis are addressed to
 provide efficient diagnostic tools and reduce healthcare costs (Belle
 et al., 2015) with big data software such as Hadoop, GPUs, and
 MongoDB. Open source big data ecosystem in healthcare is introduced
-(FIXME Raghupathi and Raghupathi, 2014) with examples and challenges
+(\FIXME{Who?} Raghupathi and Raghupathi, 2014) with examples and challenges
 to satisfy big data characteristics; volume, velocity, and variety
-(FIXME Zikopoulos, Eaton, and others, 2011). Cloud computing framework
+(\FIXME{Who?} Zikopoulos, Eaton, and others, 2011). Cloud computing framework
 in healthcare for security is also discussed with concerns about
-privacy (FIXME Stantchev, Colomo-Palacios, and Niedermayer, 2014).
+privacy (\FIXME{Who?} Stantchev, Colomo-Palacios, and Niedermayer, 2014).
 
 
 \subsubsection{Software Stack}
@@ -1245,7 +1664,7 @@ increased over commercial and scientific communities with the support
 of computing resources and data storages. For example, Hadoop-GIS
 (Ajiet al., 2013), a high performance spatial data warehousing system
 with Apache Hive and Hadoop, offers spatial query processing in
-parallel with MapReduce, and HadoopViz (FIXME Eldawy, Mokbel, and Jonathan,
+parallel with MapReduce, and HadoopViz (\FIXME{Who?} Eldawy, Mokbel, and Jonathan,
 2016), a MapReduce framework for visualizing big spatial data,
 supports various visualization types of data from satellite data to
 countries borders.
@@ -1283,13 +1702,13 @@ Planned
 
 Researches in data warehousing, data mining and OLAP have investigated
 current challenges and future directions over big data software and
-applications (FIXME Cuzzocrea, Bellatreche, and Song, 2013) due to the rapid
+applications (\FIXME{Who?} Cuzzocrea, Bellatreche, and Song, 2013) due to the rapid
 increase of data size and complexity of data models. Apache Hive, a
-warehousing solution over a hadoop (FIXME Thusoo et al., 2009), has
+warehousing solution over a hadoop (\FIXME{Who?} Thusoo et al., 2009), has
 introduced to deal with large volume of data processing with the other
-research studies (FIXME Chen, 2010; He et al., 2011) and NoSQL platforms
+research studies (\FIXME{Who?} Chen, 2010; He et al., 2011) and NoSQL platforms
 (Chevalier et al., 2015) have discussed with data warehouse ETL
-pipeline (FIXME Goodhope et al., 2012).
+pipeline (\FIXME{Who?} Goodhope et al., 2012).
 
 
 \subsubsection{Software Stack}
@@ -1466,20 +1885,20 @@ https://github.com/futuresystems/big-data-stack
 
 \section{Conclusions}
 
-FIXME Goals
+\FIXME{Who?} Goals
 
 
-FIXME Design principles
+\FIXME{Who?} Design principles
 
 
-FIXME Lessons learned
+\FIXME{Who?} Lessons learned
 
 
 
 
 \section*{Acknowledgements}
 
-This work was in part supported by FIXME
+This work was in part supported by \FIXME{Who?} 
 
 
 % Bibliography
