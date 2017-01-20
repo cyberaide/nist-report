@@ -684,25 +684,31 @@ although Matlab is dominant in the fingerprint.
   \end{center}
 \end{table*}
 
+\begin{figure}
+  \caption{Python Packages used in NIST Collection (collected from Github)}
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/packages-heatmap}
+  \label{fig:packages-heatmap}
+\end{figure}
+
+
 \subsubsection{Package/Library/Tool Dependencies}
 
-We also notice that scientific python packages are commonly used to
-enable numerical computation, data analysis and visualization for
-these big data applications (Figure \FIXME{Who}), whereas there are dependent
-packages for each project (Table \FIXME{Who?}). Tweepy, twitter API, is used in
-the twitter live analysis projects with NLTK, the natural language
-processing toolkit to complete sentiment analysis with streaming data,
-tweets. Similarly, GIS projects use particular libraries for spatial
-analysis such as geopy and shapely. New trends in software development
-packages and libraries are observed, for example, deep learning python
-packages e.g. caffe or theano have added recently to github
-repositories. Statistics (tables \FIXME{Who?}) show that popular github
-repository examples related to the six nist projects started in
-2016. Each github project has different language preferences with
-various libraries and packages however similar trends are observed,
-for example, deep learning software such as Keras, Theano, mxnet and
-Caffe are adopted among multiple projects.
-
+We also notice that scientific python packages are commonly used to enable
+numerical computation, data analysis and visualization for these big data
+applications (Figure~\ref{fig:packages-heatmap}), whereas there are dependent
+packages for each project (Table~\ref{tab:additional-py-packages}}). Tweepy,
+twitter API, is used in the twitter live analysis projects with NLTK, the
+natural language processing toolkit to complete sentiment analysis with
+streaming data, tweets. Similarly, GIS projects use particular libraries for
+spatial analysis such as geopy and shapely. New trends in software development
+packages and libraries are observed, for example, deep learning python packages
+e.g. caffe or theano have added recently to github repositories. Statistics
+(tables\ref{tab:project-examples-face}) show that popular github repository
+examples related to the six nist projects started in 2016. Each github project
+has different language preferences with various libraries and packages however
+similar trends are observed, for example, deep learning software such as Keras,
+Theano, mxnet and Caffe are adopted among multiple projects.
 
 \begin{table}[htb]
   \begin{center}
@@ -730,8 +736,8 @@ Caffe are adopted among multiple projects.
 \end{table}
 
 
-Additional packages or libraries (table FIXME) are not required in
-a default set of big data ecosystem but it is necessary to indicate the
+Additional packages (table~\ref{tab:additional-py-packages}) are not required
+in a default set of big data ecosystem but it is necessary to indicate the
 dependency with a particular application. 
 
 \begin{table*}[htb]
@@ -757,18 +763,17 @@ dependency with a particular application.
 
 \subsubsection{Datasets}
 
-Finding relevant datasets for particular applications is another
-challenge for the big data ecosystem because of its difficulty of
-collecting data from multiple sources (Kim, Trimi, and Chung, 2014),
-complexity and diversity (Hashem et al., 2015). Community contributed
-lists of public datasets (Cohen and Lo,2014) provide structured
-information with a specific location to access data and a category to
-describe itself. We intend to generate linked json data for datasets
-and applications in big data ecosystem based on these lists because it
-connects scattered data and software in an organized way. Table \FIXME{Who?}
-shows the data source from different sectors, academia(.edu or .ac),
-government(.gov), organization(.org), industry(.com or .net), and
-international(country code in suffix), among the seven topics of the
+Finding relevant datasets for particular applications is another challenge for
+the big data ecosystem because of its difficulty of collecting data from
+multiple sources (Kim, Trimi, and Chung, 2014), complexity and diversity
+(Hashem et al., 2015). Community contributed lists of public datasets (Cohen
+and Lo,2014) provide structured information with a specific location to access
+data and a category to describe itself. We intend to generate linked json data
+for datasets and applications in big data ecosystem based on these lists
+because it connects scattered data and software in an organized way.
+Table~\ref{tab:dataset-sector} shows the data source from different sectors,
+academia(.edu or .ac), government(.gov), organization(.org), industry(.com or
+.net), and international(country code in suffix), among the seven topics of the
 lists. Entire topics are available online:
 \url{https://github.com/lee212/bd_datasets}.
 
@@ -832,13 +837,13 @@ surveyed in this section.
 \subsubsection{Package/Library/Tool Dependencies}
 
 We had 37 final projects from Big Data Open Source Project Spring 2016
-and Table \FIXME{Who?} shows that packages/tools/libraries used in the class
-projects. Apache Hadoop is mostly used in conducting data analysis
-with a database support from HBase, Hive and HDFS. Python was the most
-preferred language in the course projects which resulted in high use
-of Spark in data processing with the python library, pyspark. One
-another observation is that Ansible, software deployment tool, had
-offered as a method of project deployment to ensure reproducibility.
+and Table~\ref{tab:tools-sp16} shows that packages/tools/libraries used in the
+class projects. Apache Hadoop is mostly used in conducting data analysis with a
+database support from HBase, Hive and HDFS. Python was the most preferred
+language in the course projects which resulted in high use of Spark in data
+processing with the python library, pyspark. One another observation is that
+Ansible, software deployment tool, had offered as a method of project
+deployment to ensure reproducibility.
 
 \begin{table}[htb]
   \begin{center}
@@ -877,7 +882,37 @@ offered as a method of project deployment to ensure reproducibility.
   \end{center}
 \end{table}
 
-
+\begin{table}[htb]
+  \begin{center}
+    \begin{small}
+  \begin{threeparttable}
+  \begin{tabular}{l|l|l|l|l}
+    Package & Type & Use & Language & Count\tnote{*} \\ \hline \hline
+    Hadoop & framework & parallel processing & Java & 31 \\ \hline
+    Ansible & tool & deployment & Python & 26 \\ \hline
+    Spark & framework & in-memory processing & Scala & 14 \\ \hline
+    HBase & database & NoSQL & Java & 12 \\ \hline
+    Pig & language & data abstraction & Java & 11 \\ \hline
+    Hive & database & SQL & Java & 7 \\ \hline
+    MongoDB & database & NoSQL & C++ & 7 \\ \hline
+    Mahout & library & machine learning, data mining & Java 4 \\ \hline
+    MLLib & library & machine learning & Java & 4 \\ \hline
+    OpenCV & library & computer vision & C++ & 3 \\ \hline
+    Zookeeper & framework & directory service & 3 \\ \hline
+    Tableau & tool & visualization & C++ & 3 \\ \hline
+    D3.js & tool & visualization & Javascript & 2 \\ \hline
+    MySQL & database & SQL & C++ & 2 \\ \hline
+    HDFS & database & distributed filesystem & Java & 2 \\ 
+  \end{tabular}
+  \caption{List of Top 15 Tools/Libraries/Packages used in Big Data Class Spring 2016}
+  \label{tab:tools-sp16}
+  \begin{tablenotes}
+  \item[*] Count: a number of class projects in a given tool/library/package
+  \end{tablenotes}
+  \end{threeparttable}
+    \end{small}
+  \end{center}
+\end{table}
 
 \begin{table}[htb]
   \begin{center}
@@ -906,7 +941,7 @@ offered as a method of project deployment to ensure reproducibility.
         \end{tabular}
         \caption{List of Top 15 Tools/Libraries/Packages used in Big
           Data Class Fall 2016}
-        \label{tab:tools-sp16}
+        \label{tab:tools-fa16}
         \begin{tablenotes}
         \item[*] Count: a number of class projects in a given tool/library/package
         \end{tablenotes}
@@ -1029,8 +1064,6 @@ Finally, some Ansible playbooks deploy and compile a scala program that integrat
 
 Complete
 
-
-
 % \subsubsection{Lessons Learned}
 
 \subsection{Face Detection}
@@ -1059,70 +1092,6 @@ distributed job processing on the Mesos scheduler.
   
 
 \FIXME{Who?} Figure 2. Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box)
-
-
-When it comes to deploy applications and build clusters for
-batch-processing large datasets, Ansible scripts play a big role such
-as installation and configuration towards available machines. Ansible
-provides abstractions by Playbook Roles and reusability by Include
-statements. We define X application in X Ansible Role, for example,
-and use include statements to combine with other applications e.g. Y
-or Z. Five Ansible roles are used in this use case to build clusters
-for Human and Face Detection with INRIA dataset. The main Ansible
-playbook runs Ansible roles in order which looks like:
-
-
-\begin{verbatim}
-include: sched/00-mesos.yml
-include: proc/01-spark.yml
-include: apps/02-opencv.yml
-include: data/03-inria-dataset.yml
-include: anlys/04-human-face-detection.yml
-\end{verbatim}
-	
-
-Directory names e.g. sched, proc, data, or anlys indicate BDSS layers like:
-\begin{itemize}
-\item sched: scheduler layer
-\item proc: data processing layer
-\item apps: application layer
-\item data: dataset layer
-\item anlys: analytics layer
-\end{itemize}
-
-and two digits in the filename indicate an order of roles to be run. 
-
-
-It is assumed that virtual machines are created by
-virtual-cluster-libs, the command line tool to start VM instances. For
-example on OpenStack,
-
-\begin{verbatim} 
-vcl boot -p openstack -P $USER
-\end{verbatim}
-
-command starts a set of virtual machine instances with a cluster
-definition file `.cluster.py`. The number of machines and groups for
-clusters e.g. namenodes and datanodes are specified in the file and
-Ansible inventory file, a list of target machines with groups, is
-generated once machines are ready to use. Ansible roles run to install
-applications on virtual clusters.
-
-
-Mesos role is installed first with Ansible inventory groups for
-masters and slaves in which mesos-master runs on the masters group and
-mesos-slave runs on the slaves group. Apache Zookeeper is included in
-the mesos role so that mesos slaves find an elected mesos leader from
-the zookeeper. Spark, as a data processing layer, provides two options
-for distributed job processing, batch job processing via a cluster
-mode and real-time processing via a client mode. The Mesos dispatcher
-runs on a masters group to accept a batch job submission and Spark
-interactive shell, which is the client mode, provides real-time
-processing on any node in the cluster. Either way, Spark is installed
-after a scheduler layer i.e. mesos to identify a master host for a job
-submission. Installation of OpenCV, INRIA Person Dataset and Human and
-Face Detection Python applications are followed.
-
 
 \subsubsection{Software Stack}
 
