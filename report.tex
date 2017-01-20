@@ -372,22 +372,22 @@ Several of these tools may be used to showcase different capabilities:
 
 \begin{description}
 
-\item[Ansible] YAML-based declarative descriptions of the desired
+\item[Ansible] is a YAML-based declarative descriptions of the desired
   state of the system. The description is used to generate a Python
   program that is pushed over SSH to each node, where it is then run
   to modify the system.
 
-\item[Chef] A Ruby Domain Specific Language for defining sets of
+\item[Chef] is a Ruby Domain Specific Language for defining sets of
   actions (or {/em recipes}). These recipes are pulled onto the
   managed nodes from a configuration server.
 
-\item[Juju] Focuses on connecting services together, using arbitrary
+\item[Juju] focuses on connecting services together, using arbitrary
   tools to bring a system to the desired state.
 
-\item[NixOps+NixOS] Resource allocator (EC2, GCE, Azure) for NixOS
-  nodes. Once started, the nodes are brought to the desired state by
-  interpreting a configuration file which declaratively defines the
-  desired state of the node.
+\item[NixOps+NixOS] provide resource allocatoion (EC2, GCE, Azure) for
+  NixOS nodes as well as DevOps deployment. Once started, the nodes
+  are brought to the desired state by interpreting a configuration
+  file which declaratively defines the desired state of the node.
 
 \end{description}
 
@@ -412,7 +412,7 @@ developed them.
   and stopping the instances).
 
 
-\item[Stack] A stack defines how a particular technology is to be
+\item[Stack.] A stack defines how a particular technology is to be
   deployed. This uses deployer plugins to support using Ansible Roles,
   Chef Recipes, NixOS configurations, etc. The core concept is that a
   Stack represents a single technology, such as Hadoop, or Spark, or
@@ -422,7 +422,7 @@ developed them.
   evaluating it once.
 
 
-\item[Composition] A Composition is a group of Stacks that as a whole
+\item[Composition.] A Composition is a group of Stacks that as a whole
   represent the deployment of a group of technologies. For instance
   Figure~\ref{F:stack-composition} shows that in order to provide
   Fingerprint Matching as a service, one would need a Web stack, a
@@ -451,7 +451,7 @@ developed them.
   stack itself be a composition.
 
 
-\item[Link] A Link allowes services to introspect properties of the
+\item[Link.] A Link allowes services to introspect properties of the
   virtual cluster and other Stacks at the time of deployment. For
   example, during the deployment of Apache Hadoop, the Hadoop Stack
   needs to determine the address of the nodes running the Zookeeper
@@ -463,7 +463,7 @@ developed them.
   as needed.
 
 
-\item[Deployment/Evaluation] A Deployment defines DevOps
+\item[Deployment/Evaluation.] A Deployment defines DevOps
   application-specific interface to evaluate Compositions.  Figure
   \FIXME{Who?} shows how the sample Fingerprint service stack shown in Figure
   \FIXME{Who?} may be evaluated. First the Daemon Watcher stack is deployed,
