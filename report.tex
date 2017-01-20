@@ -135,15 +135,34 @@ then conclude with some lessons learned and ideas for future work.
 
 
 
-\section{Summary of Changes from Last Update}
+\section{Scripting Deployment of NIST Use Cases}
 
-Previous update described FIXME.  \TODO{THIS IS NOT NEEDED YOU JUST
-  NEED TO SUMMARIZE WHAT THIS REPORT HAS NEW OR IMPROVED, SO I DO NOT
-  GET WHAT FIX ME WOULD DO? IS THIS NOT ALREADY WRITTEN IN OVERVIEW?}
-Since then, we have begun development of an API with a REST frontend
-for bringing up and deploying several of the technologies used by the
-Use Cases
+Automating deployments involves many components:
 
+\begin{description}
+\item[Support infrastructure.] A platform for allocating necessary
+  compute, network, and storage resources. Examples include Amazon EC2
+  and Microsoft Azure, but may include physical machines as well as
+  virtual ones.
+\item[Resource allocations.] Groups of machines (or a virtual cluster)
+  which can be configured to the desired state. These machines are
+  provided by the support infrastructure.
+\item[DevOps tools.] By storing the desired state of the cluster in
+  text file, these definitions can be iteratively improved. Examples
+  include Ansible, Chef, and Puppet.
+\item[Domain knowledge.] Important for having understanding
+  configuring various components of the software stack to adequately
+  support the task on hand. Additionally, domain knowledge supports
+  the verification of development of the tools.
+\end{description}
+
+Pursuant to these components we are developing Cloudmesh Client, which
+interfaces with various support infrastructure to provide resource
+allocations. Current work focuses on creating abstractions to support
+an Application Programming Layer (API) which may be exposed using
+Representation State Transfer (REST) protocols. Key to this are the
+support of plugins, deployers, and compositions, which are described
+next.
 
 
 \subsection{Plugins}
