@@ -1375,148 +1375,72 @@ Cloudformation.
 
 In detail, table is provided:
 
-\begin{verbatim}
-Role Name
-	Description
-	Type
-	Requirement (installation)
-	Dependencies
-	Distributed
-	Example
-	Spark
-	In-memory data processing application
-	processing
-	JDK 7+
-\end{verbatim}
+\begin{table*}[htb]
+  \begin{center}
+    \begin{small}
+      \begin{tabular}{l|l|l|l|l|l|l}
 
-Maven 3.3.9
+	Role Name & Description & Type & Requirement (Installation) & Dependencies & Distributed & Example \tabularnewline \hline \hline
+	Spark & In-memory data processing application & processing & JDK 7+ Maven 3.3.9 & Hadoop (optional) & 	Cluster Manager/Executor (Worker node) & 	 &  \\ \hline
 
-	Hadoop (optional)
-	Cluster Manager/Executor (Worker node)
+	hadoop & 
+	Map/Reduce distributed processing framework & 
+	framework & 
+	JDK & 
+	Resource Manager/Node Manager & 
+	WordCount &   \\ \hline
+
+	Storm & 
+	a real time fault-tolerant and distributed stream data processing system & 
+	processing & 
+	OpenJDK & 
+	ZooKeeper &
+	Master/Worker &
+	\\ \hline
+
+	Zookeeper & 
+	Synchronization service for distributed processes & 
+	tool & 
+	JDK 6+ &  & 
+	Ensemble (3 servers minimum) & 
+	\\ \hline
+
+	hbase & 
+	NoSQL database for real-time processing & 
+	database & 
+	JDK & 
+	ZooKeeper & 
+	Master/RegionServer & 
+\\ \hline
+
+	Twitter REST APIs & Reading Twitter data & library & 	 & OAuth & &  \\ \hline
 	
+	D3, tableau &  Javascript visualization library & visualization & &  & &  \\ \hline
+	Nltk & Natural Language Toolkit & library & Python2.7 or 3.2+ & Numpy (optional) & 	 & \\ \hline
+	AlchemyAPI & Collecting Tweets & library & Mongodb, R (ggplot2) & 	 &  & \\ \hline
+	OpenCV & Computer Vision Libraries & library &  & &  &  \\ \hline
+	Mahout & Machine learning applications & library & JDK Maven & hadoop-client & Via Hadoop, Spark, H20 or Flink & Naive Bayes (Classification) K-Means (Clustering) Recommender \\ \hline
+	Lucene/Solr & Search engine framework & library & JRE 1.8+ & 	 & SolrCloud & 	 \\ \hline
+	MLlib & Machine Learning Library from Spark & library & & Spark & & Logistic regression (Classification) K-means (Clustering) \\ \hline
+	MongoDB & Document-oriented database & application & & & mongos/shard & \\ \hline
+	Hive & Database SQL query interface to apache hadoop & application & JDK  Hadoop & 	Hadoop &  &  \\ \hline
+	Pig & High level scripting language for Hadoop & Application & 	Hadoop JDK Ant (optional) JUnit (optional) &  & & \\ \hline
+	RethinkDB & NoSQL, distributed document-oriented (JSON) database & application &  & & sharding/replication supported & \\ \hline
+	TextBlob & Natural language processing (NLP) Python library & 	Analytics & 	NLTK corpora & & & \\ \hliine
+	Pattern & Web mining python library & 	Analytics & 	Numpy (for LSA; Latent semantic analysis) & 	Python 2.5+ only, no support on 3 &  & \\ \hline
 
-	hadoop
-	Map/Reduce distributed processing framework
-	framework
-	JDK
-SSH
-	
-
-	Resource Manager/Node Manager
-	WordCount
-	Storm
-	a real time fault-tolerant and distributed stream data processing system [1]
-	processing
-	OpenJDK
 
 
-	ZooKeeper
-	Master/Worker
-	
 
-	Zookeeper
-	Synchronization service for distributed processes
-	tool
-	JDK 6+
-	
+      \end{tabular}
+      \caption{Dataset Sectors of academia, government, organization,
+        industry and international from Big Data Classes at Indiana
+        University}
+      \label{tab:dataset-sector-iu}
+    \end{small}
+  \end{center}
+\end{table*}
 
-	Ensemble (3 servers minimum)
-
-	
-
-	hbase
-	NoSQL database for real-time processing
-	database
-	JDK
-	ZooKeeper
-	Master/RegionServer
-	
-
-	Twitter REST APIs
-	Reading Twitter data
-	library
-	
-
-	OAuth
-	
-
-	
-
-	D3, tableau
-
-	Javascript visualization library
-	visualization
-	
-
-	
-
-	
-
-	
-
-	Nltk
-	Natural Language Toolkit
-	library
-	Python2.7 or 3.2+
-
-	Numpy (optional)
-	
-
-	
-
-	AlchemyAPI
-	Collecting Tweets
-	library
-	Mongodb, R (ggplot2)
-	
-
-	
-
-	
-
-	OpenCV
-	Computer Vision Libraries
-	library
-	
-
-	
-
-	
-
-	
-
-	Mahout
-	Machine learning applications
-	library
-	JDK
-Maven
-	hadoop-client
-	Via Hadoop, Spark, H20 or Flink
-	Naive Bayes (Classification)
-K-Means (Clustering)
-Recommender
-	Lucene/Solr
-	Search engine framework
-	library
-	JRE 1.8+
-	
-
-	SolrCloud
-	
-
-	MLlib
-	Machine Learning Library from Spark
-	library
-	
-
-	Spark
-	
-
-	Logistic regression (Classification)
-K-means (Clustering)
-	
-
-	
 
 	
 
