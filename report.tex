@@ -875,7 +875,7 @@ deployment to ensure reproducibility.
   \begin{center}
     \begin{small}
         \resizebox{\columnwidth}{!}{
-        \begin{tabular}{l|l|m{1.5cm}|m{1.5cm}|l}
+        \begin{tabular}{l|l|l|l|l}
 
     Package      & Type      & Use                       & Language        & Count\tnote{*} \\ \hline \hline
     Numpy        & library   & data management           & Python          & 13             \\ \hline
@@ -915,22 +915,24 @@ deployment to ensure reproducibility.
   \begin{threeparttable}
  \resizebox{\columnwidth}{!}{
   \begin{tabular}{l|l|l|l|l}
-    Package & Type & Use & Language & Count\tnote{*} \\ \hline \hline
-    Hadoop & framework & parallel processing & Java & 31 \\ \hline
-    Ansible & tool & deployment & Python & 26 \\ \hline
-    Spark & framework & in-memory processing & Scala & 14 \\ \hline
-    HBase & database & NoSQL & Java & 12 \\ \hline
-    Pig & language & data abstraction & Java & 11 \\ \hline
-    Hive & database & SQL & Java & 7 \\ \hline
-    MongoDB & database & NoSQL & C++ & 7 \\ \hline
-    Mahout & library & machine learning, data mining & Java 4 \\ \hline
-    MLLib & library & machine learning & Java & 4 \\ \hline
-    OpenCV & library & computer vision & C++ & 3 \\ \hline
-    Zookeeper & framework & directory service & 3 \\ \hline
-    Tableau & tool & visualization & C++ & 3 \\ \hline
-    D3.js & tool & visualization & Javascript & 2 \\ \hline
-    MySQL & database & SQL & C++ & 2 \\ \hline
-    HDFS & database & distributed filesystem & Java & 2 \\ 
+
+    Package   & Type      & Use                           & Language   & Count\tnote{*} \\ \hline \hline
+    Hadoop    & framework & parallel processing           & Java       & 31             \\ \hline
+    Ansible   & tool      & deployment                    & Python     & 26             \\ \hline
+    Spark     & framework & in-memory processing          & Scala      & 14             \\ \hline
+    HBase     & database  & NoSQL                         & Java       & 12             \\ \hline
+    Pig       & language  & data abstraction              & Java       & 11             \\ \hline
+    Hive      & database  & SQL                           & Java       & 7              \\ \hline
+    MongoDB   & database  & NoSQL                         & C++        & 7              \\ \hline
+    Mahout    & library   & machine learning, data mining & Java       & 4              \\ \hline
+    MLLib     & library   & machine learning              & Java       & 4              \\ \hline
+    OpenCV    & library   & computer vision               & C++        & 3              \\ \hline
+    Zookeeper & framework & directory service             & Java       & 3              \\ \hline
+    Tableau   & tool      & visualization                 & C++        & 3              \\ \hline
+    D3.js     & tool      & visualization                 & Javascript & 2              \\ \hline
+    MySQL     & database  & SQL                           & C++        & 2              \\ \hline
+    HDFS      & database  & distributed filesystem        & Java       & 2              \\ 
+
   \end{tabular}}
   \caption{List of Top 15 Tools/Libraries/Packages used in Big Data Class Spring 2016}
   \label{tab:tools-sp16}
@@ -946,7 +948,8 @@ deployment to ensure reproducibility.
   \begin{center}
     \begin{small}
       \begin{threeparttable}
-        \begin{tabular}{l|l|m{1.5cm}|m{1.5cm}|l}
+        \resizebox{\columnwidth}{!}{
+        \begin{tabular}{l|l|l|l|l}
 
     Package      & Type     & Use                    & Language & Count\tnote{*} \\ \hline \hline
     HDFS         & database & distributed filesystem & Java     & 2              \\ 
@@ -966,7 +969,7 @@ deployment to ensure reproducibility.
     bokeh        & library  & visualization          & Python   & 4              \\ \hline
     ploty        & library  & visualization          & Python   & 4              \\ \hline
 
-        \end{tabular}
+        \end{tabular}}
         \caption{List of Top 15 Tools/Libraries/Packages used in Big
           Data Class Fall 2016}
         \label{tab:tools-fa16}
@@ -1113,11 +1116,29 @@ Mesos to train and apply detection models from OpenCV using Python API. OpenCV
 Python code runs with Spark Map function to perform distributed job processing
 on the Mesos scheduler.
 
-\FIXME{Who?} Figure 1. Human Detection, original image (left), processed image (right)
-  
-  
+\begin{figure}[htb]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=0.3\columnwidth]{images/face01}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=0.3\columnwidth]{images/face02}
+    \end{subfigure}
+      \caption{Human Detection, original image (left), processed image (right)}
+  \label{F:NIST-face1}
+\end{figure}
 
-\FIXME{Who?} Figure 2. Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box)
+\begin{figure}[htb]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=0.3\columnwidth]{images/face03}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=0.3\columnwidth]{images/face04}
+    \end{subfigure}
+      \caption{Face and Eye Recognition with Human Detection (face: blue box, eye: red box, human: green box}
+  \label{F:NIST-face2}
+\end{figure}
 
 \subsubsection{Software Stack}
 
