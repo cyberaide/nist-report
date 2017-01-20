@@ -150,7 +150,7 @@ Automating deployments involves many components: \smallskip
 \item[Resource allocations.] Groups of machines (or a virtual cluster)
   which can be configured to the desired state. These machines are
   provided by the support infrastructure.
-\item[DevOps tools.] By storing the desired state of the cluster in
+\item[Droops tools.] By storing the desired state of the cluster in
   text file, these definitions can be iteratively improved. Examples
   include Ansible, Chef, and Puppet.
 \item[Domain knowledge.] Important for having understanding
@@ -176,7 +176,7 @@ next.
   architecture for deployment components. These components can
   therefore more easily be integrated from various sources.
 \item[Deployers] are intended to allow the use of multiple DevOps
-  tools. We had previouly settled on the use of Ansible for deploying
+  tools. We had previously settled on the use of Ansible for deploying
   software components. While Ansible continues to be the primary tool,
   we are designing in support for other systems as well. This would
   allow users more familiar with Chef or NixOps for example to take
@@ -227,7 +227,7 @@ associated with a single application for a specific dataset. Starting
 with a Cloudmesh Script that allocates resources and then deploys the
 necessary software and desired dataset. The analytics component
 executed is then executed. Upon verification of the results and
-modification of compnenets as needed the process repeats. This
+modification of components as needed the process repeats. This
 continues iteratively until the desired results are achieved. Tests at
 the end that verify certain results will be used to verify if the
 resulting run was successful. If not they are flagged and a
@@ -236,11 +236,11 @@ be integrated into the set of benchmarks tested and the they can be
 evaluated based continuously or upon change.
 
 
-This behaviour is augmented in Figure~\ref{F:NIST-devops-2} with the integration of the
+This behavior is augmented in Figure~\ref{F:NIST-devops-2} with the integration of the
 data repositories that are used to manage and maintain the scripts,
 the playbooks and the data. While the scripts are simple cloudmesh
 scripts to drive a particular application, we envision that most roles
-are published as ansible roles to be integrated in application
+are published as Ansible roles to be integrated in application
 specific playbooks. Playbooks exists for the phases of the execution
 
 \begin{description}
@@ -256,7 +256,7 @@ specific playbooks. Playbooks exists for the phases of the execution
   \centering
       \includegraphics[width=0.8\columnwidth]{images/nist-devops-2.pdf}
   \caption{Interaction of the continuous improvement steps with
-    various databases while using ansible deployment scripts.}
+    various databases while using Ansible deployment scripts.}
   \label{F:NIST-devops-2}
 \end{figure}
 
@@ -298,7 +298,7 @@ The first step in a data processing pipelines is the
 provisioning/allocation of compute resources. These can be physical
 machines or, increasingly common and accessible, virtual
 machines. There are several major technologies that support this
-infrustructure as a service paradigm. Some notable ones include Amazon
+infrastructure as a service paradigm. Some notable ones include Amazon
 EC2, Microsoft Azure, Google Compute Engine, and Chameleon Cloud.
 
 
@@ -306,17 +306,17 @@ Part of our work has been in developing the cloudmesh client, which is
 a lightweight client interface of accessing heterogeneous clouds,
 clusters, and work- stations right from the users computer. The user
 can man- age her own set of resources she would like to utilize. Thus
-the user has the freedom to customize their cyber infras- tructure
+the user has the freedom to customize their cyber-infrastructure
 they use. Cloudmesh client includes an API, a command-line client, and
 a command-line shell. It strives to abstract backends to databases
 that are used to manage the workflow utilizing the different
 infrastructure and also the services. Switching for example to stage
 virtual machines from OpenStack clouds to amazon is as simple as
-specify- ing the name of the cloud. Moreover, cloudmesh client can be
+specifying the name of the cloud. Moreover, cloudmesh client can be
 installed on Linux, MacOSX, and in future Windows.  Currently
-cloudmesh supports backends to SLURM, SSH, OpenStack, AWS, and
-Azure. Using cloudmesh, users can migrate accross infrustructure
-service providers relatively seemlessly.
+cloudmesh supports backends to SLURM, SSH, OpenStack, Amazon EC2, and
+Azure. Using Cloudmesh, users can migrate across infrastructure
+service providers relatively seamlessly.
 
 
 \begin{figure}[htb]
@@ -347,7 +347,7 @@ files that can be checked into a version control system and tested.
 
 The following table provides a short overview of several notable
 DevOps tools. These tools allows the state of a cluster to be defined
-at various levels. Some (such as Ansible, SaltStack) primarily operate
+at various levels. Some (such as Ansible, Salt Stack) primarily operate
 at the level of software deployment and configuration of a preexisting
 cluster, while others (i.e. Juju, NixOps) additionally provide support
 for allocating the compute resources. Another factor is the
@@ -413,7 +413,7 @@ Several of these tools may be used to showcase different capabilities:
 \item[Juju] focuses on connecting services together, using arbitrary
   tools to bring a system to the desired state.
 
-\item[NixOps+NixOS] provide resource allocatoion (EC2, GCE, Azure) for
+\item[NixOps+NixOS] provide resource allocation (EC2, GCE, Azure) for
   NixOS nodes as well as DevOps deployment. Once started, the nodes
   are brought to the desired state by interpreting a configuration
   file which declaratively defines the desired state of the node.
@@ -427,7 +427,7 @@ One of our design principles is to allow the user to use whichever
 technologies they are most familiar with. Therefore we do not wish to
 constrain them into using a specific DevOps technology such as Ansible
 or Chef. Additionally, there are many deployment definitions for
-various technologies publically available for these deployment
+various technologies publicly available for these deployment
 software, as well as private definitions housed by whichever company
 developed them.
 
@@ -470,7 +470,7 @@ developed them.
       \label{F:stack-composition}}
   \end{figure}
 
-  Figure~\ref{F:stack-composition}. Fingprint Stack composed with Hadoop and Web stacks to
+  Figure~\ref{F:stack-composition}. Fingerprint Stack composed with Hadoop and Web stacks to
   provide Fingerprinting-as-a-Service. Note that Stacks can also be
   Compositions
 
@@ -480,13 +480,13 @@ developed them.
   stack itself be a composition.
 
 
-\item[Link.] A Link allowes services to introspect properties of the
+\item[Link.] A Link allows services to introspect properties of the
   virtual cluster and other Stacks at the time of deployment. For
   example, during the deployment of Apache Hadoop, the Hadoop Stack
   needs to determine the address of the nodes running the Zookeeper
   service, as well as the port on which Zookeeper is
   exposed. Currently this information is maintained by hand, which
-  causes deployments to be very sensistive to how dependent
+  causes deployments to be very sensitive to how dependent
   compositions are configured. The goal for Linking is to propagate
   this information throughout the Stack Composition dependency graph
   as needed.
@@ -499,7 +499,7 @@ developed them.
   evaluated. First the Daemon Watcher stack is deployed, as it is
   required by Hadoop. Although Java Stack is required for Hadoop,
   Spark, HBase, and Drill, it should only be evaluated once per
-  node. The Fingerpring and Web stack may potentially be evaluated in
+  node. The Fingerprint and Web stack may potentially be evaluated in
   parallel. The semantics of the parallel evaluation is not well
   understood at the moment though.
 
@@ -528,7 +528,7 @@ developed them.
 
 \item[Client based.] As a client, the cloudmesh program requires no
   special privileges to run. This adheres to the principle of least
-  priviledge in an attempt to minimize security issues. The program
+  privilege in an attempt to minimize security issues. The program
   runs locally end exits completely once the user terminates it.
 
 
@@ -544,7 +544,7 @@ developed them.
 
 
 \item[REST API.] The goal here is that the client may be used to
-  support service-based deployments, in scenarios that warrent it.
+  support service-based deployments, in scenarios that warrant it.
 
 
 \item[Layered Architecture.] The layered architecture, as shown in
@@ -619,7 +619,7 @@ experiments.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Stack Deployment
 \hline \multicolumn{3}{|l|}{\grey\bf Stack Deployment: /stack} \tabularnewline \hline
-/                         & GET  & List the available stacks with discription \tabularnewline \hline
+/                         & GET  & List the available stacks with description \tabularnewline \hline
 /:id/deployments/:cluster & POST & Deploy a stack onto a cluster \tabularnewline \hline
 /:id/status               & GET  & Current status \tabularnewline \hline
 /:id/deployments/:cluster & GET  & Current status on given cluster \tabularnewline \hline
