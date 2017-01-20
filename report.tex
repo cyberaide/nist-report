@@ -259,6 +259,36 @@ specific playbooks. Playbooks exists for the phases of the execution
 \end{figure}
 
 
+\section{Software Stacks}
+
+We will be describing multiple software components in later
+sections. To put them into better context we provide a brief overview
+here.
+
+\begin{description}
+\item[Support infrastructure.] Systems such as OpenStack, Amazon EC2,
+  Amazon Azure, Google Compute Engine, Chameleon Cloud, Jetstream, San
+  Diego Supercomputer Cluster's Comet. These are platforms that
+  support allocating resources for computation, storage, network. All
+  listed but Comet are provide virtualized environments, the latter
+  provides hypervisors running on bare-metal \FIXME{Gregor check for
+    accuracy}.
+\item[DevOps.] Tools such as Ansible, Puppet, Chef, and others listed
+  in Table~\ref{T:devops-tools} provide the ability to install
+  software on and configure a virtual cluster allocated by the support
+  infrastructure.
+\item[Cloudmesh.] A client program which interfaces with multiple
+  support infrastructure providers, allowing allocation of virtual
+  clusters across multiple providers. This greatly aids the goal of
+  scripting deployments. Additionally, pursuant of the same goal,
+  Cloudmesh is beginning to use DevOps tools to configure the
+  allocated resource.
+\item[Big Data Stack.] A collection of curated Ansible playbooks for
+  deploying common Big Data software such as Hadoop, Spark, or
+  HBase. It is developed the Cloudmesh group and is used to support
+  the DevOps portion of the Cloudmesh codebase.
+\end{description}
+
 
 
 \section{Provisioning Machines}
@@ -607,13 +637,6 @@ experiments.
     \label{T:rest}
   \end{center}
 \end{table*}
-
-\section{Software Stacks}
-
-Cloudmesh is primary, uses BDS under hood.
-https://github.com/futuresystems/big-data-stack
-
-
 
 \section{Ecosystem Analysis}
 
@@ -1432,27 +1455,6 @@ In detail, table is provided:
   \end{center}
 \end{table*}
 
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-
-
-\section{Software Stacks}
-
-Cloudmesh is primary, uses BDS under hood.
-https://github.com/futuresystems/big-data-stack
 
 
 \section{Conclusions}
