@@ -165,30 +165,25 @@ support of plugins, deployers, and compositions, which are described
 next.
 
 
-\subsection{Plugins}
-
-Previously we were developing a single Ansible repository with the
-software modules such as Spark, HBase, Drill, etc. We have come to
-understand that an improved approach is to support a plugin-based
-architecture for deployment components. These components can therefore
-more easily be integrated from various sources.
-
-
-\subsection{Deployers}
-
-We had previouly settled on the use of Ansible for deploying software
-components. While Ansible continues to be the primary tool, we are
-designing in support for other systems as well. This would allow users
-more familiar with Chef or NixOps for example to take advantage of the
-domain they know better.
-
-
-
-\subsection{Stack Compositions}
-
-Compositions will allow different deployers to build on top of each
-other.
-
+\begin{description}
+\item[Plugins] are intended to encourage code reuse and sharing.
+  Previously we were developing a single Ansible repository with the
+  software modules such as Spark, HBase, Drill, etc. We have come to
+  understand that an improved approach is to support a plugin-based
+  architecture for deployment components. These components can
+  therefore more easily be integrated from various sources.
+\item[Deployers] are intended to allow the use of multiple DevOps
+  tools. We had previouly settled on the use of Ansible for deploying
+  software components. While Ansible continues to be the primary tool,
+  we are designing in support for other systems as well. This would
+  allow users more familiar with Chef or NixOps for example to take
+  advantage of the domain they know better.
+\item[Stack Compositions] are intended to allow various components of
+  a software stack, which depend upon layers lower in the stack, to be
+  deployed together. A crucial component of composition is the ability
+  to link properties of the stack, which may depend on values not
+  known until deployment.
+\end{description}
 
 
 
