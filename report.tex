@@ -1101,17 +1101,15 @@ Implementation repository:\\
 
 Human detection and face detection have been studied during the last
 several years and models for them have improved along with Histograms
-of Oriented Gradients (HOG) for Human Detection [ \FIXME{Who?} ]. OpenCV is a
-Computer Vision library including the SVM classifier and the HOG
-object detector for pedestrian detection and INRIA Person Dataset [\FIXME{Who?}]
-is one of popular samples for both training and testing purposes. This
-example shows how to deploy the NIST Human and Face Detection with
-INRIA Person Dataset to the cluster where we deployed Apache Spark on
-Mesos to train and apply detection models from OpenCV using Python
-API. OpenCV Python code runs with Spark Map function to perform
-distributed job processing on the Mesos scheduler.
-  
-  
+of Oriented Gradients (HOG) for Human Detection~\cite{dalal2005histograms}.
+OpenCV is a Computer Vision library including the SVM classifier and the HOG
+object detector for pedestrian detection and INRIA Person Dataset
+~\cite{dalal2005inria} is one of popular samples for both training and testing
+purposes. This example shows how to deploy the NIST Human and Face Detection
+with INRIA Person Dataset to the cluster where we deployed Apache Spark on
+Mesos to train and apply detection models from OpenCV using Python API. OpenCV
+Python code runs with Spark Map function to perform distributed job processing
+on the Mesos scheduler.
 
 \FIXME{Who?} Figure 1. Human Detection, original image (left), processed image (right)
   
