@@ -100,9 +100,7 @@
     via GitHub) and Academic (via Indiana University classes) in which
     Big Data Software is used. There is a brief description of a few
     of the Use Cases, as well as a description of the major
-    components. Finally we describe the software stacks developed as
-    part of this work and then conclude with some lessons learned and
-    ideas for future work.  }
+    components.  }
 \end{abstract}
 
 \setboolean{displaycopyright}{true}
@@ -117,24 +115,24 @@
 
 \section{Overview}
 
-This document summarizes the NIST Big Data Public Working Group
-(BDPWG) use-cases document: "Possible Big Data Use Cases
-Implementation using NBDRA". Additional projects originated from
-classes taught at Indiana University.
+The goal of our work has been to try to understand some common themes
+among Big Data processing pipelines, as well as implement and use
+software to allowing scripting to deploy, configure, and run such
+pipelines across a range of resource providers.
 
+To this end, we have implemented the Fingerprint Matching and Face
+Detection use cases from the Big Data Working Group proposed Use Cases
+and are in the development stage of several others: Twitter Analysis,
+Analytics for Healthcare Informatics, and Spatial Big Data
+Analytics. Additionally, we have investigated publicly source code
+from GitHug \FIXME{Hyungro, is this accurate?} as well as relevant
+student projects taught at Indiana University to better understand the
+ecosystem of Big Data Analytics.
 
-The focus of our current work is the development of abstractions
-capturing the basic concepts we have seen and the development of a
-REST API implementing some of these ideas. We describe a few of the
-underlying components for allocating and managing virtual
-clusters. Additionally, a summary of the ecosystem (Open Source via
-GitHub) and Academic (via Indiana University classes) in which Big
-Data Software is used. There is a brief description of a few of the
-Use Cases, as well as a description of the major components. Finally
-we describe the software stacks developed as part of this work and
-then conclude with some lessons learned and ideas for future work.
-
-
+Finally, we are currently developing a software layer to expose as a
+REST API an interface that allows a kind of ``Big Data as a Service''
+which takes advantage of the scripting capabilities currently under
+development
 
 \section{Scripting Deployment of NIST Use Cases}
 
@@ -1451,17 +1449,6 @@ In detail, table is provided:
   \end{center}
 \end{table*}
 
-
-
-\section{Conclusions}
-
-\FIXME{Who?} Goals
-
-
-\FIXME{Who?} Design principles
-
-
-\FIXME{Who?} Lessons learned
 
 
 \section*{Acknowledgements}
