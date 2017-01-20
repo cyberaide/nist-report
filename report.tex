@@ -464,13 +464,14 @@ developed them.
 
 
 \item[Deployment/Evaluation.] A Deployment defines DevOps
-  application-specific interface to evaluate Compositions.  Figure
-  \FIXME{Who?} shows how the sample Fingerprint service stack shown in Figure
-  \FIXME{Who?} may be evaluated. First the Daemon Watcher stack is deployed,
-  as it is required by Hadoop. Although Java Stack is required for
-  Hadoop, Spark, HBase, and Drill, it should only be evaluated once
-  per node. The Fingerpring and Web stack may potentially be evaluated
-  in parallel. The semantics of the parallel evaluation is not well
+  application-specific interface to evaluate Compositions.
+  Figure~\ref{F:stack-graph} shows how the sample Fingerprint service
+  stack shown in Figure~\ref{F:stack-composition} may be
+  evaluated. First the Daemon Watcher stack is deployed, as it is
+  required by Hadoop. Although Java Stack is required for Hadoop,
+  Spark, HBase, and Drill, it should only be evaluated once per
+  node. The Fingerpring and Web stack may potentially be evaluated in
+  parallel. The semantics of the parallel evaluation is not well
   understood at the moment though.
 
 
@@ -481,9 +482,7 @@ developed them.
     \caption{Evaluation of a stack.
       The {\it My Analytics Stack} is composed of the {\it Fingerprint} and {\it Web} layers.
       These in turn are themselves compositions.
-      Numbers indicate order of evaluation.
-      While {\it spark}, {\it hbase}, and {\it drill} depend on {\it java}, 
-      re-evaluation (\textit{4} - \textit{6}) is not problematic due to the idempotency property.
+      Numbers indicate order of evaluation. While {\it spark}, {\it hbase}, and {\it drill} depend on {\it java}, re-evaluation (\textit{4} - \textit{6}) is not problematic due to the idempotency property.
       \label{F:stack-graph}}
   \end{figure}
 
